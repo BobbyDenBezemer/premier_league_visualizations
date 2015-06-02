@@ -17,7 +17,7 @@ This data visualization will deal with football data on the English premier leag
 ## Premier league team rankings
 Premier league team rankings are scraped from statto.com. The data is then put into long format. The long format consists of 3 columns, a year column, a team column and a points column. 
 
-The data are visualized using an interactive bar chart. The user can select a given year from a drop down menu. Based on the year selected by the user, the data is reordered and displayed in descending order.
+The data are visualized using an interactive bar chart. The user can select a given year from a drop down menu. Based on the year selected by the user, the data is reordered and displayed in descending order. The first graph will look something like this. ![alt text](https://github.com/BobbyDenBezemer/programming_final_project/tree/master/images/example_first_chart.png "Logo Title Text 1")
 
 A second barchart on the right will show all the teams that have won the league since its inception including the amount of times that they have won the league.
 
