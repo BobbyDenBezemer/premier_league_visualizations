@@ -24,7 +24,8 @@ A second barchart on the right will show all the teams that have won the league 
 ## The dispersion of premier league teams throughout the UK
 The second visualization, which is displayed below, will show a map of the UK with all the teams that have participated during a given year. The location of a team is determined by means of the lattitude and longitude of the location of the team. The size of the team is calculated using the stadium capacity of the team. This data is also scraped from the web. 
 
-During a given year the visualization only shows those teams that have participated that given year within the league. Furthermore, the visualization also contains a drop down menu where you can select the given year that you want to be displayed on the map.
+During a given year the visualization only shows those teams that have participated that given year within the league. Furthermore, the visualization also contains a drop down menu where you can select the given year that you want to be displayed on the map. The map itself my look something like the map below, although there is a chance that I may use the leaflet package and make a map similar to those used on google maps.
+<img src="https://github.com/BobbyDenBezemer/programming_final_project/blob/master/images/map_of_england.png"/>
 
 ## Premier league wage expenses
 The third visualization will consists of two interactive line graphs. The first line graph, the user will see the yearly average wage expense across teams. In the second line graph, the user can select a given team to be displayed. In both graphs the user can hover the lines after which a tooltip will pop up.
