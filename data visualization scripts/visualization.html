@@ -4,75 +4,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Data visualization</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Personal stylesheet -->
+    <link rel="stylesheet" href="./css/barChart.css">
+
+    <!-- D3 -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="jquery.min.js"></script>
+<!-- bar chat visualization -->
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style>
-    .navbar-brand {
-        font-size: 1.8em;
-    }
-
-    #topContainer {
-        background-image: url("stadium1.jpg");
-        height: 400px;
-        width: 100%;
-        background-size: cover;
-        opacity: 0.;
-    }
-
-    #topRow {
-        margin-top: 100px;
-        text-align: center;
-    }
-
-    #topRow h1 {
-        font-size: 300%;
-    }
-
-    .marginTop {
-        margin-top: 30px;
-    }
-
-    .marginTopMore {
-        margin-top: 200px;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    #contentIm {
-        opacity: 1;
-    }
-
-    #footer {
-        background-color: #B0D1FB;
-
-    }
-
-    .marginBottom {
-        margin-bottom: 30px
-    }
-
-    .title {
-        margin-top: 100px;
-        font-size: 300%;
-    }
-
-    </style>
 
 </head>
 <body>
@@ -101,23 +48,16 @@
             <h2><span class="glyphicon glyphicon-signal"></span> Rankings </h2>
             <p>The visualization on premier league rankings shows an interactive bar chart. Through a drop down menu the user can pick a given year. The chart will then show the rankings of the given year. The bar chart is made using d3.js</p>
         </div>
-        <div class="col-md-8 marginTop">
+        <div class="col-md-8 marginTop barChart">
             <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Seasons
             <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1992</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1993</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1994</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1995</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1996</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1997</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="row marginTopMore">
+    <div class="row">
         <div class="col-md-4">
             <h2><span class="glyphicon glyphicon-map-marker"></span> Spread of Teams </h2>
             <p>The visualization on the distribution of premier league teams across the UK will be an interactive map starting from 1992 until 2014. The user can choose to display a particular year by means of a dropdown menu.</p>
@@ -127,7 +67,7 @@
             <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Seasons
             <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1992</a></li>
+                    <li role="presentation">1992</li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1993</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1994</a></li>
                     <li role="presentation" class="divider"></li>
@@ -140,6 +80,7 @@
     </div>
 </div>
 </div>
+   
 
     <script>
 
@@ -148,12 +89,8 @@
 
     </script>  
 
+    <script src="bar_chart2.js"></script>
 
-
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    
   </body>
 </html>
