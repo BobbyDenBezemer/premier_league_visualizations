@@ -1,0 +1,99 @@
+.navbar-brand {
+        font-size: 1.8em;
+    }
+
+    #topContainer {
+        background-image: url("stadium1.jpg");
+        height: 400px;
+        width: 100%;
+        background-size: cover;
+        opacity: 0.;
+    }
+
+    #topRow {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    #topRow h1 {
+        font-size: 300%;
+    }
+
+    .marginTop {
+        margin-top: 30px;
+    }
+
+    .marginTopMore {
+        margin-top: 200px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    #contentIm {
+        opacity: 1;
+    }
+
+    #footer {
+        background-color: #B0D1FB;
+
+    }
+
+    .marginBottom {
+        margin-bottom: 30px
+    }
+
+.title {
+    margin-top: 100px;
+    font-size: 300%;
+}
+
+.rect {
+  fill: steelblue;
+}
+
+.text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.menu {
+    margin-top: 10px;
+    margin-left: 40px;
+    font: 14px sans-serif;
+    font-weight: bold;
+}
+
+.largeText {
+    fill: white;
+    font: 14px sans-serif;
+    text-anchor: end;
+}
+
+
+
+.subunit.SCT { fill: #ffffff }
+.subunit.WLS { fill: #cdd; }
+.subunit.NIR { fill: #ffffff }
+.subunit.ENG { fill: #dcd; }
+.subunit.IRL { fill: #ffffff;
+stroke: none; }
+
+.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.subunit-boundary-hidden {
+    fill: none;
+    stroke: none;
+}
+
+.stadium {
+    opacity: 0.7;
+    fill: steelblue;
+}

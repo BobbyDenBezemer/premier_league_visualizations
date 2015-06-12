@@ -86,11 +86,14 @@ def get_premier_league_teams(root_url, premier_league_start_year, premier_league
         for team in dom('.league-table-mini td:nth-child(2) a'):
             teams.append(team.content)
             
+            
         points = []
         for index, point in enumerate(dom('.league-table-mini tr')):
             for td in point('td')[4:5]:
                 points.append(td.content)
-        data.append(['Teams', 'Season', 'Points'])      
+        data.append(['Teams', 'Season', 'Points']) 
+        
+        # zip takes two lists and loops over them
         for team, point in zip(teams, points):
             data.append([team, sub_url[0:4], point])
         
@@ -124,6 +127,9 @@ location_details_teams = get_location_details(url = "http://www.doogal.co.uk/Foo
 csv_writer("stadiums.csv", data = location_details_teams) 
 
 teams_per_year = pd.read_csv("yearly_teams.csv", sep = ",")
+
+def merge_teams_stadiums(teams, stadiums):
+    new_data = pd.merge
 
 def get_player_nationality_2001(url, teams_per_year):
     # Take only the teams till 2001

@@ -7,11 +7,24 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
 
 
 // create an svg element
-var svg = d3.select(".barChart").append("svg")
+var svg1 = d3.select(".barChart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   	.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// create a unique function
+function isUnique(data, variable){
+    var number_of_years = new Array()
+    var length = data.length;
+
+    for (var i = 0; i < length; i++){
+        if (number_of_years.indexOf(data[i][variable]) == -1 && !isNaN(data[i][variable])){
+            number_of_years.push(data[i][variable]);
+        }
+    }
+    return number_of_years;
+}
 
 
 // C:/Users/Bobby/Documents/programming_final_project
@@ -21,19 +34,6 @@ d3.csv("./data/yearly_teams.csv", function(error, data) {
     	d.Points =+ d.Points;
     	d.Season =+ d.Season;
   	});
-
-	// create a unique function
-	function isUnique(data, variable){
-    	var number_of_years = new Array()
-    	var length = data.length;
-
-    	for (var i = 0; i < length; i++){
-    		if (number_of_years.indexOf(data[i][variable]) == -1 && !isNaN(data[i][variable])){
-    			number_of_years.push(data[i][variable]);
-    		}
-    	}
-    	return number_of_years;
-    }
 
     // calculate the number of years in dataset and use this for the height variable
     var years = isUnique(data, "Season");
@@ -59,7 +59,7 @@ d3.csv("./data/yearly_teams.csv", function(error, data) {
         }
 		
 		// bind the data
-        bar = svg.selectAll("g")
+        bar = svg1.selectAll("g")
             .data(data.filter(function(d){return d.Season === year}))
 
         // making the enter and exit selectinos

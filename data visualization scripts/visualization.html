@@ -10,12 +10,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Personal stylesheet -->
     <link rel="stylesheet" href="./css/barChart.css">
+    <link href="./css/visualization_style_sheet.css" rel="stylesheet">
 
     <!-- D3 -->
     <script src="http://d3js.org/d3.v3.min.js"></script>
 
+    <!-- Jquery and bootstrap.js --> 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Topojson -->
+    <script src="js/topojson.js"></script>
 
 
 <!-- bar chat visualization -->
@@ -62,18 +67,11 @@
             <h2><span class="glyphicon glyphicon-map-marker"></span> Spread of Teams </h2>
             <p>The visualization on the distribution of premier league teams across the UK will be an interactive map starting from 1992 until 2014. The user can choose to display a particular year by means of a dropdown menu.</p>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 ukMap">
             <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Seasons
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">Seasons
             <span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation">1992</li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1993</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1994</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1995</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1996</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1997</a></li>
+                <ul class="dropdown-menu map-drop-down" role="menu" aria-labelledby="menu1">
                 </ul>
             </div>
         </div>
@@ -90,6 +88,8 @@
     </script>  
 
     <script src="bar_chart2.js"></script>
+    <script src="league_map.js"></script>
+    
 
     
   </body>
