@@ -94,6 +94,77 @@ stroke: none; }
 }
 
 .stadium {
-    opacity: 0.7;
     fill: steelblue;
+}
+
+.fadeIn {
+    fill-opacity: 0;
+}
+
+
+#textBox {
+  position: absolute;
+  width: 170px;
+  height: auto;
+  padding: 7px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+#textBox.hidden {
+  display: none;
+}
+
+#boxHeader {
+    font-weight: bolder;
+}
+
+#textBox p {
+  font-family: sans-serif;
+  font-size: 12px;
+  line-height: 10px;
+  margin: 2px;
+}
+
+
+#slider1{
+    position: absolute;
+    fill: green;
+    width: 200px;
+    heigh:200px;
+}
+
+.axis path,
+.axis line
+ {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+#marker {
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    background-color: steelblue;
+}
+
+.mapButton {
+    float: left;
+}
+
+.mapContinueButton {
+    margin-left: 10px;
+}
+
+.mapDropDown {
+    margin-top: 20px;
+    margin-right: 50px;
 }

@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Personal stylesheet -->
+    <link rel="stylesheet" href="css/d3.slider.css" /> 
     <link rel="stylesheet" href="./css/barChart.css">
     <link href="./css/visualization_style_sheet.css" rel="stylesheet">
 
@@ -21,6 +22,9 @@
 
     <!-- Topojson -->
     <script src="js/topojson.js"></script>
+
+    <!-- Slider -->
+    
 
 
 <!-- bar chat visualization -->
@@ -68,12 +72,27 @@
             <p>The visualization on the distribution of premier league teams across the UK will be an interactive map starting from 1992 until 2014. The user can choose to display a particular year by means of a dropdown menu.</p>
         </div>
         <div class="col-md-8 ukMap">
-            <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">Seasons
-            <span class="caret"></span></button>
-                <ul class="dropdown-menu map-drop-down" role="menu" aria-labelledby="menu1">
-                </ul>
+            <div>
+                <button class="btn btn-danger mapButton">Stop animation </button>
             </div>
+
+            <div>
+                <button class="btn btn-success mapContinueButton">Continue animation </button>
+            </div>
+            <div class="dropdown mapDropDown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">Seasons
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu map-drop-down" role="menu" aria-labelledby="menu1">
+                    </ul>
+            </div>
+
+            <div id="textBox" class="hidden">
+                 <p><span id="boxHeader">Team information </span></p>
+                 <p class="info">Team: <span id="team"> </span> </p>
+                 <p class="info">Points: <span id="points"> </span></p>
+                 <p class="info">Stadium Capacity: <span id="capacity"> </span> </p>
+            </div>
+            <div id="marker"> </div>
         </div>
     </div>
 </div>
@@ -86,7 +105,8 @@
             $(window).height());
 
     </script>  
-
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="js/d3.slider.js"></script>
     <script src="bar_chart2.js"></script>
     <script src="league_map.js"></script>
     
