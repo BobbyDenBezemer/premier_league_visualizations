@@ -26,8 +26,6 @@ function isUnique(data, variable){
     return number_of_years;
 }
 
-
-// C:/Users/Bobby/Documents/programming_final_project
 // Load in the data
 d3.csv("./data/yearly_teams.csv", function(error, data) {
 	data.forEach(function(d) {
@@ -105,55 +103,77 @@ d3.csv("./data/yearly_teams.csv", function(error, data) {
 
     };
 
-    window.onload = draw(data, 1992);
+    function draw_table(data_scores, year){
 
-    // making the drop down menu and adding an event listener
-    var menu = d3.select(".dropdown-menu")
-        .selectAll("li")
-        .data(years)
-        .attr("role", "presentation")
-        .enter()
-        .append("li")
-        .append("a")
-        .attr("href",  "")
-        .text(function(d,i){return years[i];})
-        .on("click", function(d){
-            d3.event.preventDefault();
-            var year = d;
-            var dataset = data.filter(function(d){return d.Season === year})
-            draw(dataset, year);
+        // the columns you'd like to display
+        var data_scores = data_scores.filter(function(d){return d.Year === year})
+        var columns = ["Year", "Name", "Team", "Goals"];
+
+        var table = d3.select("#scoreTable").append("table"),
+            thead = table.append("thead"),
+            tbody = table.append("tbody");
+
+        // append the header row
+        thead.append("tr")
+            .selectAll("th")
+            .data(columns)
+            .enter()
+            .append("th")
+            .text(function(column) { return column; });
+
+        // create a row for each object in the data
+        var rows = tbody.selectAll("tr")
+            .data(data_scores)
+            .enter()
+            .append("tr");
+
+        // create a cell in each row for each column
+        var cells = rows.selectAll("td")
+            .data(function(row) {
+            return columns.map(function(column) {
+                return {column: column, value: row[column]};
+            });
         })
+        .enter()
+        .append("td")
+            .text(function(d) { return d.value; });
+    } 
 
-    // mouseover changes the fill of the rectangles, adds a new text class and displays Points
-    barEnter.on('mouseover', function(d){
-        d3.select(this)
-        .select('.rect')
-        .style("fill", "#ADD8E6")
+    d3.csv("./data/top_scores.csv", function(error, data_scores) {
+        data_scores.forEach(function(d) {
+            d.Year =+ d.Year;
+        });
 
-        d3.select(this)
-        .select(".text")
-        .attr("class", "largeText")
+        // calculate the number of years in dataset and use this for the height variable
+        var scores_years = isUnique(data_scores, "Season");
+        var scores_number_years = scores_years.length; 
 
-        d3.select(this)
-        .append("text")
-        .attr("class", "largeText")
-        .attr("x", function(d) { return x(d.Points) - 37; })
-        .attr("y", barHeight / 2)
-        .attr("dy", ".35em")
-        .text(function(d) { return String(d.Points) + " " + "Points"; });
-    });
-
-    // mouseout moves the class steelblue back and hides the points of a team
-    barEnter.on("mouseout", function(d){
-        d3.select(this)
-        .select('.rect')
-        .style('fill', 'steelblue');
-
-        d3.select(this)
-        .select("text")
-        .attr("class", "text")
-
-        d3.select(".largeText").remove()
+        // making the drop down menu and adding an event listener
+        var menu = d3.select(".dropdown-menu")
+            .selectAll("li")
+            .data(years)
+            .attr("role", "presentation")
+            .enter()
+            .append("li")
+            .append("a")
+            .attr("href",  "")
+            .text(function(d,i){return years[i];})
+            .on("click", function(d){
+                d3.event.preventDefault();
+                var year = d;
+                var dataset = data.filter(function(d){return d.Season === year})
+                var tableData = data_scores.filter(function(d){return d.Year === year})
+                console.log(tableData);
+                console.log(year);
+                draw(dataset, year);
+                draw_table(tableData, year)
+            }) 
+  
     })
-        
-});
+    window.onload = function(){
+        draw(data, 1992); 
+        draw_table(data_scores, 1992);
+    }();
+    //window.onload = draw(data, 1992);
+       
+})

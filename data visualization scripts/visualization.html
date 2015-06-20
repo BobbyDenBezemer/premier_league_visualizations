@@ -9,7 +9,6 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Personal stylesheet -->
-    <link rel="stylesheet" href="css/d3.slider.css" /> 
     <link rel="stylesheet" href="./css/barChart.css">
     <link href="./css/visualization_style_sheet.css" rel="stylesheet">
 
@@ -22,6 +21,7 @@
 
     <!-- Topojson -->
     <script src="js/topojson.js"></script>
+    <script src="js/queue.js"></script>
 
     <!-- Slider -->
     
@@ -55,10 +55,11 @@
     <div class="row">
         <div class="col-md-4 marginTop">
             <h2><span class="glyphicon glyphicon-signal"></span> Rankings </h2>
-            <p>The visualization on premier league rankings shows an interactive bar chart. Through a drop down menu the user can pick a given year. The chart will then show the rankings of the given year. The bar chart is made using d3.js</p>
+            <p class="text-muted text-justify">The visualization on the right shows an interactive bar chart of the premier league team rankings per year. Below the top scorers per year are displayed in a table. The use can pick a given year through the dropdown menu. Both the bar chart and the table will then be updated.</p>
+            <div id ="Table"> </div>
         </div>
         <div class="col-md-8 marginTop barChart">
-            <div class="dropdown">
+            <div class="dropdown barDropDown">
             <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Seasons
             <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
@@ -69,16 +70,20 @@
     <div class="row">
         <div class="col-md-4">
             <h2><span class="glyphicon glyphicon-map-marker"></span> Spread of Teams </h2>
-            <p>The visualization on the distribution of premier league teams across the UK will be an interactive map starting from 1992 until 2014. The user can choose to display a particular year by means of a dropdown menu.</p>
+            <p class="text-muted text-justify">The visualization on the distribution of premier league teams across the UK will be an interactive map starting from 1992 until 2014. The user can choose to display a particular year by means of a dropdown menu.</p>
         </div>
         <div class="col-md-8 ukMap">
             <div>
-                <button class="btn btn-danger mapButton">Stop animation </button>
+                <button id="mapPauzeButton" class="btn btn-danger btn-large mapButton"><span class="glyphicon glyphicon-pause"></span></button>
+            </div>
+            <div>
+                <button id="mapRestartButton" class="btn btn-warning btn-large mapButton"><span class="glyphicon glyphicon-fast-backward"></span></button>
             </div>
 
             <div>
-                <button class="btn btn-success mapContinueButton">Continue animation </button>
+                <button id="mapContinueButton" class="btn btn-success btn-large lastButton"><span class="glyphicon glyphicon-play"></span></button>
             </div>
+            
             <div class="dropdown mapDropDown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">Seasons
                     <span class="caret"></span></button>
@@ -92,7 +97,7 @@
                  <p class="info">Points: <span id="points"> </span></p>
                  <p class="info">Stadium Capacity: <span id="capacity"> </span> </p>
             </div>
-            <div id="marker"> </div>
+            <div id="marker"class="hidden"> </div>
         </div>
     </div>
 </div>
@@ -107,7 +112,7 @@
     </script>  
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="js/d3.slider.js"></script>
-    <script src="bar_chart2.js"></script>
+    <script src="bar_chart_new.js"></script>
     <script src="league_map.js"></script>
     
 

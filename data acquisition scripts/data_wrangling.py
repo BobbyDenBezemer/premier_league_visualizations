@@ -9,6 +9,7 @@ import requests
 from urllib2 import URLError
 from httplib import BadStatusLine
 from requests.exceptions import HTTPError, ConnectionError
+import re
 
 # change working directory
 os.chdir("C:/Users/Bobby/Documents/premier_league")
@@ -53,8 +54,6 @@ def csv_writer(filename, data):
 
 data = wage_data_reader(filename = "wage_data.csv", seperator = ";")        
 csv_writer("wages_data.csv", data = data)
-
-
 
 def get_premier_league_teams(root_url, premier_league_start_year, premier_league_end_year):
     """
@@ -128,8 +127,13 @@ csv_writer("stadiums.csv", data = location_details_teams)
 
 teams_per_year = pd.read_csv("yearly_teams.csv", sep = ",")
 
-def merge_teams_stadiums(teams, stadiums):
-    new_data = pd.merge
+stadiums = pd.read_csv("stadiums.csv")
+teams = pd.read_csv("yearly_teams.csv")
+stadium_teams = pd.merge(teams, stadiums, how = "inner",
+                left_on = "Teams", right_on = "Team" )
+stadium_teams = stadium_teams[['Teams', 'Season', 'Points', 'Stadium', 'Capacity','Latitude', 'Longitude']]
+stadium_teams['Capacity'] = stadium_teams['Capacity'].str.replace(',', '')
+stadium_teams.to_csv("stadium_teams.csv", index = False)
 
 def get_player_nationality_2001(url, teams_per_year):
     # Take only the teams till 2001
@@ -502,34 +506,64 @@ for index, element in enumerate(dom('.thumbborder')):
     if index > 84 and index < 120:
         element.attrs['alt']
 
-url = "http://en.wikipedia.org/wiki/2007%E2%80%9308_Middlesbrough_F.C._season"
-url = URL(url)
-dom = DOM(url.download(cached=True))
+def extract_league_scores(url):
+    url = "https://en.wikipedia.org/wiki/List_of_top_Premier_League_goal_scorers_by_season#1993.E2.80.9394"
+    url = URL(url)
+    dom = DOM(url.download(cached=True))
 
-for index, element in enumerate(dom('.thumbborder')):
-    if index < 32:
-        element.attrs['alt']
-    if index < 38:
-        element.attrs['alt']
-.plainrowheaders .thumbborder
-
-for i in test:
-    print i
-a = test[0]
-print a[0]('alt')
-
-url = "http://www.transfermarkt.co.uk/"
-url = URL(url)
-dom = DOM(url.download(cached=True))
-dom.content
+    data = []
+    scorers = []
+    # append column names
+    # data.append()
+    # extract the top 5 players each year
+    start_year = 1992
+    for year in dom('table[class="wikitable"]'):
+        for index, player in enumerate(year('tr')):
+            if index < 6 and index > 0:
+                for index2, element in enumerate(player('td')[1:4]):
+                    print index2
+                    if index2 == 0 or index2 == 1:
+                        try:  
+                            scorers.append(element('a')[1].content)
+                        except IndexError:
+                            try:
+                                scorers.append(element('a').content)
+                            except AttributeError:
+                                scorers.append(element.content)
+                    else:
+                        scorers.append(element.content)
+                        scorers.append(str(start_year))
+            scorers = []
+            data.append(scorers)
+        start_year = start_year + 1
+    # properly edit the data. Filter out empty lists
+    cleanr =re.compile('<.*?>')
+    new_data = []
+    for element in data:
+        if element:
+            new_data.append(element)
+        else:
+            pass
+    clean_scores = []
+    data = []
+    data.append(['Name', 'Team', 'Goals', 'Year'])
+    for element in new_data:
+        for value in element:
+            cleantext = re.sub(cleanr,'', value)
+            clean_scores.append(cleantext)
+        if clean_scores:
+            data.append(clean_scores)
+        else:
+            pass
+        clean_scores = []
+                
+                
     
-for i in test:
-    print i('img')[0].attrs("alt")
-    "\n"
-    "\n"
+    return data
     
-for index, element in enumerate(dom('tr:nth-child(3) td:nth-child(2) span img')):
-    try:    
-        print element.attrs("alt")
-    except TypeError:
-        pass
+top_scorers = extract_league_scores("https://en.wikipedia.org/wiki/List_of_top_Premier_League_goal_scorers_by_season#1993.E2.80.9394")
+csv_writer("top_scores.csv", top_scorers)
+
+                
+
+            

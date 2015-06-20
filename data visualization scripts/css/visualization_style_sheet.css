@@ -150,21 +150,47 @@ stroke: none; }
 }
 
 #marker {
-    width: 10px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     background-color: steelblue;
 }
 
 .mapButton {
     float: left;
+    margin: 10px;
 }
 
-.mapContinueButton {
-    margin-left: 10px;
+.lastButton {
+  margin: 10px;
+}
+
+
+.barDropDown {
+    margin-top: 25px;
 }
 
 .mapDropDown {
     margin-top: 20px;
     margin-right: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+}
+
+td {
+    padding: 15px;
+}
+
+th {
+    background-color: steelblue;
+    color: white;
+    text-align: center;
+}
+
+tr, td {
+  border: 1px solid #F0F0F0;
 }

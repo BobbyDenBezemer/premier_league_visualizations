@@ -2,7 +2,7 @@
 
 // declare the margins
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 850 - margin.left - margin.right,
+    width = 950 - margin.left - margin.right,
     height_map = 850 - margin.top - margin.bottom;
 
 // append the svg element to the body
@@ -159,6 +159,9 @@ d3.json("./data/uk.json", function(error, uk) {
         // remove the exit selection
         pointExit.transition().duration(1000).style('opacity', '0').remove();
 
+        // remove the hidden class of the marker
+        d3.select("#marker").classed("hidden", false)
+
         // add an event handler to all the new circular elements
         point = svg.selectAll("circle");
         point
@@ -239,6 +242,23 @@ d3.json("./data/uk.json", function(error, uk) {
             console.log(year);
             draw_map(stadium_data, year);
       })
+
+      var pauzeButton = d3.select("#mapPauzeButton")
+        .on("click", function(){
+          clearTimeout(mapInterval);
+        })
+
+      var continueButton = d3.select("#mapContinueButton")
+        .on("click", function(){
+          mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
+        })
+
+      var restartButton = d3.select("#mapRestartButton")
+        .on("click", function(){
+          yearTimer = 0;
+          clearTimeout(mapInterval);
+          mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
+        })
 
 
       
