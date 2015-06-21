@@ -53,12 +53,12 @@
 
 <div class="container marginTop">
     <div class="row">
-        <div class="col-md-4 marginTop">
+        <div class="col-md-6 marginTop">
             <h2><span class="glyphicon glyphicon-signal"></span> Rankings </h2>
             <p class="text-muted text-justify">The visualization on the right shows an interactive bar chart of the premier league team rankings per year. Below the top scorers per year are displayed in a table. The use can pick a given year through the dropdown menu. Both the bar chart and the table will then be updated.</p>
             <div id ="Table"> </div>
         </div>
-        <div class="col-md-8 marginTop barChart">
+        <div class="col-md-6 marginTop barChart">
             <div class="dropdown barDropDown">
             <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Seasons
             <span class="caret"></span></button>
@@ -68,12 +68,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
-            <h2 class="left"><span class="glyphicon glyphicon-plane"></span> Foreign Players </h2>
-            <p class="text-muted text-justify">The linegraph above shows the average number of foreign players in the premier league per year. As one can see, the trend is increasing. </p>
+        <div class="col-md-6">
+            <h2><span class="glyphicon glyphicon-plane"></span> Foreign Players </h2>
+            <p class="text-muted text-justify">The linegraph below shows the average number of foreign players in the premier league per year. As one can see, the trend is increasing. By hoovering on the individual teams on the map, the user can display the amount of foreign player in a given premier league over time in the line graph. The user can then compare this to the average of foreign players in a given year and see whether a team scores below or above average. Note that if the number of foreign player in a team is 0, this means that the team wasn't participating in the premier league during the given year. </p>
             <div id="foreignPlayers"> </div>
         </div>
-        <div class="col-md-8 ukMap">
+        <div class="col-md-6 ukMap">
             <h2><span class="glyphicon glyphicon-map-marker"></span> Spread of Teams </h2>
             <p class="text-muted text-justify">The visualization on the distribution of premier league teams across the UK will be an interactive map starting from 1992 until 2014. The user can choose to display a particular year by means of a dropdown menu.</p>
             <div>
@@ -117,9 +117,7 @@
     <script src="js/d3.slider.js"></script>
     <script src="bar_chart_new.js"></script>
     <script src="league_map.js"></script>
-    <script src="line_graph.js"></script>
-    
 
-    
+
   </body>
 </html>

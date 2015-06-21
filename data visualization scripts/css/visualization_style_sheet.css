@@ -147,7 +147,7 @@ stroke: none; }
 }
 
 .teamDropDown {
-  margin-top: 30px;
+  margin-top: 3U0px;
   margin-left: 30px;
 }
 
@@ -208,4 +208,8 @@ th {
 
 tr, td {
   border: 1px solid #F0F0F0;
+}
+
+#teamPath {
+  stroke: red;
 }

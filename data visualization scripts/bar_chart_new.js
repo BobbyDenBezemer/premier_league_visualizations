@@ -3,7 +3,8 @@
 // declare the margins
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 950 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 500 - margin.top - margin.bottom,
+    width_table = 650 - margin.left - margin.right;
 
 
 // create an svg element
@@ -30,7 +31,6 @@ function isUnique(data, variable){
 var drawVisualization = function(error, data){
     var dataRanking = data[0];
     var dataScores = data[1];
-    console.log(dataScores);
 
     dataRanking.forEach(function(d){
         d.Points =+ d.Points;
@@ -114,7 +114,7 @@ var drawVisualization = function(error, data){
 
     var table, thead, tbody, rows;
     table = d3.select("#Table").append("table")
-            .attr("id", "scoreTable")
+        .attr("id", "scoreTable")
 
     thead = table.append("thead"),
     tbody = table.append("tbody");

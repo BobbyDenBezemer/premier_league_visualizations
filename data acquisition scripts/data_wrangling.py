@@ -564,6 +564,101 @@ def extract_league_scores(url):
 top_scorers = extract_league_scores("https://en.wikipedia.org/wiki/List_of_top_Premier_League_goal_scorers_by_season#1993.E2.80.9394")
 csv_writer("top_scores.csv", top_scorers)
 
+
+url = "http://www.transfermarkt.co.uk/premier-league/startseite/wettbewerb/GB1/plus/?saison_id=2013"
+url = URL(url)
+data = DOM(url.download(cached=True))
+data.content
+
+team = []
+# Extract team names
+def scrape_transfermarkt(root_url, start_year, end_year):
+    
+    premier_league_duration = end_year - start_year
+    
+    # get all the years as a list of strings
+    years = [str(start_year + year) 
+        for year in range(premier_league_duration)]
+            
+    data = []
+    data.append(['Year', 'Team', 'Num_players', 'Av_Age', 'Num_foreign', 'Market_value'])
+    # keep going until you have all the teams per year
+    while len(years) > 0:
+        # get url
+        sub_url = years.pop(0)
+        url = URL(root_url + sub_url) 
+        print url
+        
+        # empty list and download the html page         
+        dom = DOM(url.download(cached=True))
+        
+        # get all the teams per year
+        teams = []
+        num_player = []
+        av_age = []
+        num_foreign = []
+        market_value = []
+            
+        for index1, item in enumerate(dom('table[class="items"] tbody tr')):
+            if index1 < 20:
+                for index, team in enumerate(item('td')):
+                    if index == 0:
+                        teams.append(team('img')[0].attr['alt'])
+                    elif index == 3:
+                        num_player.append(team('a')[0].content)
+                    elif index == 4:
+                        av_age.append(team.content)
+                    elif index == 5:
+                        num_foreign.append(team.content)
+                    elif index == 6:
+                        market_value.append(team('a')[0].content)
+        
+        for a,b,c,d,e in zip(teams, num_player, av_age, num_foreign, market_value):
+            data.append([sub_url, a, b, c, d, e])
+            
+    return data
+    
+data = scrape_transfermarkt(start_year = 1992, \
+    end_year = 2015, \
+    root_url = "http://www.transfermarkt.co.uk/premier-league/startseite/wettbewerb/GB1/plus/?saison_id=")
+
+# Now edit the data in such a way that we can work with it in d3
+csv_writer("nationality_market.csv", data = data)  
+data = pd.read_csv("nationality_market.csv")
+
+# Convert av_age column
+# Use a mapping function
+f = lambda x: x.replace(",", ".")       
+data['Av_Age'] = data['Av_Age'].map(f)
+
+# Replace missing market value by 0
+f = lambda x: x.replace('-', "0")
+data['Market_value'] = data['Market_value'].map(f)
+
+# Calculate percentage foreign players per team
+data['Perc_foreign'] = ((data['Num_foreign'] / data['Num_players']) * 100).round(2)
+
+# Now let's group the dataframe by Year and calculate general average across years
+import numpy as np
+data_average = data.groupby('Year')
+data_average = data_average.agg({'Perc_foreign': np.mean})
+data_average.columns = ['Average']
+
+
+# Now make a dataset with mean of each year
+data_average_team_year = data[['Year', 'Team', 'Perc_foreign']]
+data_wide = data_average_team_year.pivot('Year', 'Team', 'Perc_foreign')
+data_wide['Average'] = data_average['Average']
+
+# Data is in wide format. Let's now trn it back to long format
+#data_long = pd.melt(test, id_vars = ['Team'])
+data_long = data_wide.unstack('Team')
+data_long = pd.DataFrame(data_long)
+data_long.reset_index(inplace=True)
+data_long.columns = ['Team', 'Year', 'Perc_foreign']
+data_long.to_csv("perc_foreign.csv", index = False)
+    
+
                 
 
             
