@@ -3,7 +3,7 @@
 // declare the margins
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 950 - margin.left - margin.right,
-    height_map = 850 - margin.top - margin.bottom;
+    height_map = 650 - margin.top - margin.bottom;
 
 // append the svg element to the body
 var svg = d3.select(".ukMap").append("svg")
@@ -17,7 +17,7 @@ var projection =  d3.geo.albers()
     .center([0, 55.4])
     .rotate([4.4, 0])
     .parallels([50, 60])
-    .scale(6000)
+    .scale(4500)
     .translate([width / 2, height_map / 5])
 
 // create a path variable using the projection
@@ -88,7 +88,7 @@ d3.json("./data/uk.json", function(error, uk) {
       var xScale = d3.scale.linear()
           .domain([d3.min(stadium_data, function(d){return d.Season}), 
           d3.max(stadium_data, function(d){return d.Season})])
-          .range([20, width - 20]);
+          .range([margin.left, width - margin.left]);
 
       var xAxis = d3.svg.axis()
                   .scale(xScale)
@@ -138,7 +138,7 @@ d3.json("./data/uk.json", function(error, uk) {
         console.log(update);
           
 
-        // enter selection should have a fadeIn transition which does not work so far
+        // enter selection should have a fadeIn transition 
         pointEnter = point.enter()
           .append("circle")
           .attr("class", "stadium")
@@ -208,11 +208,11 @@ d3.json("./data/uk.json", function(error, uk) {
             timer = i
           }
         }
-        console.log(year)
-        //var timer = 
-        var xCoord = 33.5 * (timer + 1);
-        var yCoord = 830;
+
+        var xCoord = ((width - margin.left)  / number_of_years) * (timer + 1);
         console.log(xCoord);
+        var yCoord = height_map + 60;
+
         d3.select("#marker")
           .style("left", xCoord + "px")
           .style("top", yCoord + "px");
@@ -250,6 +250,9 @@ d3.json("./data/uk.json", function(error, uk) {
 
       var continueButton = d3.select("#mapContinueButton")
         .on("click", function(){
+          if (mapInterval){
+            clearTimeout(mapInterval);  
+          }
           mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
         })
 
@@ -259,6 +262,11 @@ d3.json("./data/uk.json", function(error, uk) {
           clearTimeout(mapInterval);
           mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
         })
+
+        //TODO: Check webscraper top scorers
+        //TODO: Scrape nationality data from transfermarkt
+        //TODO: 
+        //TODO: Make some graphs with 
 
 
       

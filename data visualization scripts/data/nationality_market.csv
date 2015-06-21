@@ -1,0 +1,461 @@
+Year,Team,Num_players,Av_Age,Num_foreign,Market_value
+1992,Everton FC,26,"26,4",8,-
+1992,Blackburn Rovers,25,"23,6",7,-
+1992,Southampton FC,25,"25,1",6,-
+1992,Manchester City,24,"24,3",9,-
+1992,Sheffield United,27,"24,8",6,-
+1992,Aston Villa,27,"24,4",9,-
+1992,Chelsea FC,35,"24,5",17,-
+1992,Middlesbrough FC,26,"24,8",10,-
+1992,Ipswich Town,24,"25,9",7,-
+1992,Nottingham Forest,25,"23,8",8,-
+1992,Crystal Palace,27,"23,3",5,-
+1992,Coventry City,27,"24,9",9,-
+1992,Wimbledon FC,30,"24,1",10,-
+1992,Sheffield Wednesday,28,"25,7",6,-
+1992,Queens Park Rangers,24,"25,3",6,-
+1992,Oldham Athletic,25,"24,7",4,-
+1992,Norwich City,21,"24,8",9,-
+1992,Arsenal FC,31,"24,3",8,-
+1992,Liverpool FC,31,"24,6",14,-
+1992,Tottenham Hotspur,32,"22,6",10,-
+1993,Everton FC,23,"26,0",6,-
+1993,Liverpool FC,31,"25,0",12,-
+1993,Tottenham Hotspur,36,"23,0",10,-
+1993,Blackburn Rovers,23,"24,2",7,-
+1993,Southampton FC,31,"25,5",7,-
+1993,Manchester City,34,"25,0",13,-
+1993,Sheffield United,28,"25,6",8,-
+1993,Swindon Town,27,"26,7",7,-
+1993,West Ham United,27,"26,4",4,-
+1993,Aston Villa,27,"25,1",10,-
+1993,Chelsea FC,33,"24,9",15,-
+1993,Ipswich Town,22,"26,9",5,-
+1993,Newcastle United,28,"25,4",9,-
+1993,Coventry City,27,"25,8",11,-
+1993,Wimbledon FC,26,"24,8",8,-
+1993,Sheffield Wednesday,28,"25,5",5,-
+1993,Queens Park Rangers,24,"25,2",6,-
+1993,Oldham Athletic,26,"25,7",6,-
+1993,Norwich City,23,"24,7",8,-
+1993,Arsenal FC,26,"25,5",7,-
+1994,Arsenal FC,32,"25,3",9,-
+1994,Everton FC,26,"25,6",7,-
+1994,Liverpool FC,26,"24,3",11,-
+1994,Tottenham Hotspur,28,"24,4",10,-
+1994,Blackburn Rovers,26,"24,7",8,-
+1994,Southampton FC,26,"24,4",8,-
+1994,Manchester City,28,"25,8",10,-
+1994,West Ham United,27,"26,6",7,-
+1994,Leeds United,27,"25,3",10,-
+1994,Chelsea FC,30,"25,4",13,-
+1994,Ipswich Town,34,"25,2",10,-
+1994,Nottingham Forest,24,"24,8",9,-
+1994,Newcastle United,24,"25,0",8,-
+1994,Crystal Palace,25,"25,5",9,-
+1994,Coventry City,28,"26,5",12,-
+1994,Wimbledon FC,30,"25,4",12,-
+1994,Leicester City,29,"25,2",5,-
+1994,Sheffield Wednesday,25,"25,7",6,-
+1994,Queens Park Rangers,24,"25,8",7,-
+1994,Norwich City,27,"24,3",10,-
+1995,Arsenal FC,30,"25,8",8,-
+1995,Tottenham Hotspur,35,"23,2",11,-
+1995,Southampton FC,25,"24,5",6,-
+1995,Manchester City,32,"24,6",16,-
+1995,Bolton Wanderers,26,"25,4",13,-
+1995,West Ham United,35,"25,8",17,-
+1995,Leeds United,33,"24,8",13,-
+1995,Aston Villa,25,"23,8",8,-
+1995,Chelsea FC,30,"26,3",15,-
+1995,Middlesbrough FC,30,"25,2",11,-
+1995,Nottingham Forest,28,"24,9",10,-
+1995,Newcastle United,24,"25,3",9,-
+1995,Coventry City,30,"25,4",12,-
+1995,Wimbledon FC,30,"26,0",13,-
+1995,Sheffield Wednesday,29,"26,0",11,-
+1995,Queens Park Rangers,27,"25,0",9,-
+1995,Everton FC,25,"25,8",8,-
+1995,Liverpool FC,30,"24,2",12,-
+1995,Blackburn Rovers,31,"24,2",10,-
+1995,Manchester United,27,"23,2",10,-
+1996,Arsenal FC,32,"26,2",10,-
+1996,Derby County,30,"24,8",14,-
+1996,Liverpool FC,27,"23,5",11,-
+1996,Tottenham Hotspur,33,"24,3",13,-
+1996,Blackburn Rovers,28,"24,3",13,-
+1996,Southampton FC,34,"24,6",13,-
+1996,Sunderland AFC,30,"25,8",9,-
+1996,West Ham United,36,"26,5",18,-
+1996,Leeds United,33,"24,1",14,-
+1996,Chelsea FC,32,"25,9",17,-
+1996,Middlesbrough FC,34,"25,9",15,-
+1996,Nottingham Forest,33,"24,9",13,-
+1996,Newcastle United,22,"25,7",7,-
+1996,Coventry City,33,"24,3",17,-
+1996,Wimbledon FC,26,"25,6",14,-
+1996,Leicester City,30,"25,8",10,-
+1996,Sheffield Wednesday,24,"26,1",8,-
+1996,Everton FC,28,"24,5",9,-
+1996,Aston Villa,26,"23,8",11,-
+1996,Manchester United,30,"23,2",14,-
+1997,Arsenal FC,30,"25,2",13,-
+1997,Derby County,30,"24,4",17,-
+1997,Everton FC,36,"23,8",14,-
+1997,Liverpool FC,32,"23,9",16,-
+1997,Tottenham Hotspur,36,"25,1",18,-
+1997,Blackburn Rovers,31,"24,6",19,-
+1997,Southampton FC,37,"24,4",15,-
+1997,Barnsley FC,27,"26,2",12,-
+1997,Bolton Wanderers,30,"26,8",13,-
+1997,West Ham United,36,"25,1",17,-
+1997,Leeds United,36,"22,7",23,-
+1997,Aston Villa,28,"23,4",10,-
+1997,Newcastle United,39,"24,1",20,-
+1997,Crystal Palace,37,"23,1",19,-
+1997,Coventry City,32,"24,7",17,-
+1997,Wimbledon FC,32,"25,6",18,-
+1997,Sheffield Wednesday,37,"25,8",19,-
+1997,Chelsea FC,35,"25,1",18,-
+1997,Manchester United,31,"24,0",14,-
+1997,Leicester City,26,"25,6",10,-
+1998,Derby County,31,"24,0",18,-
+1998,Everton FC,36,"23,9",17,-
+1998,Liverpool FC,35,"23,8",20,-
+1998,Tottenham Hotspur,34,"25,9",17,-
+1998,Blackburn Rovers,37,"24,1",22,-
+1998,Southampton FC,34,"25,4",13,-
+1998,Charlton Athletic,30,"26,6",7,-
+1998,West Ham United,36,"25,6",15,-
+1998,Leeds United,36,"23,0",23,-
+1998,Aston Villa,34,"23,5",10,-
+1998,Middlesbrough FC,31,"25,5",13,-
+1998,Nottingham Forest,38,"25,7",23,-
+1998,Newcastle United,34,"24,6",21,-
+1998,Coventry City,41,"23,8",21,-
+1998,Wimbledon FC,31,"25,3",19,-
+1998,Leicester City,25,"26,0",13,-
+1998,Sheffield Wednesday,31,"25,0",17,-
+1998,Arsenal FC,36,"23,6",19,-
+1998,Chelsea FC,28,"26,3",17,-
+1998,Manchester United,31,"24,2",16,-
+1999,Derby County,35,"24,7",19,-
+1999,Everton FC,38,"24,4",17,-
+1999,Liverpool FC,33,"24,2",23,-
+1999,Southampton FC,36,"25,8",16,-
+1999,Sunderland AFC,33,"24,4",17,-
+1999,West Ham United,31,"26,2",15,-
+1999,Leeds United,33,"22,7",18,-
+1999,Aston Villa,32,"24,0",11,-
+1999,Chelsea FC,32,"26,4",21,-
+1999,Middlesbrough FC,34,"25,0",16,-
+1999,Newcastle United,35,"25,1",24,-
+1999,Coventry City,39,"24,1",23,-
+1999,Wimbledon FC,34,"25,4",22,-
+1999,Leicester City,27,"25,4",10,-
+1999,Watford FC,31,"24,3",15,-
+1999,Bradford City,28,"28,4",11,-
+1999,Sheffield Wednesday,32,"25,5",17,-
+1999,Arsenal FC,33,"25,0",18,-
+1999,Tottenham Hotspur,34,"24,9",16,-
+1999,Manchester United,37,"24,2",20,-
+2000,Derby County,35,"23,5",21,-
+2000,Everton FC,35,"25,3",20,-
+2000,Liverpool FC,30,"24,5",21,-
+2000,Tottenham Hotspur,34,"24,3",17,-
+2000,Southampton FC,29,"25,9",15,-
+2000,Manchester City,36,"24,9",24,-
+2000,Sunderland AFC,36,"24,3",22,-
+2000,Charlton Athletic,30,"25,2",14,-
+2000,West Ham United,39,"25,1",23,-
+2000,Leeds United,36,"22,5",22,-
+2000,Aston Villa,28,"25,0",12,-
+2000,Middlesbrough FC,34,"26,0",16,-
+2000,Ipswich Town,27,"24,8",11,-
+2000,Newcastle United,37,"23,4",25,-
+2000,Coventry City,34,"23,3",21,-
+2000,Bradford City,35,"27,8",14,-
+2000,Arsenal FC,33,"25,3",22,-
+2000,Chelsea FC,35,"26,2",28,-
+2000,Manchester United,34,"24,9",18,-
+2000,Leicester City,33,"24,9",12,-
+2001,Arsenal FC,27,"25,9",15,-
+2001,Derby County,38,"24,3",21,-
+2001,Everton FC,31,"26,3",19,-
+2001,Tottenham Hotspur,26,"27,2",13,-
+2001,Blackburn Rovers,31,"26,8",20,-
+2001,Southampton FC,33,"26,7",17,-
+2001,Sunderland AFC,29,"25,2",22,-
+2001,Bolton Wanderers,40,"25,9",24,-
+2001,Charlton Athletic,29,"26,3",14,-
+2001,West Ham United,30,"27,3",19,-
+2001,Leeds United,26,"24,1",13,-
+2001,Aston Villa,25,"25,9",14,-
+2001,Middlesbrough FC,35,"26,5",17,-
+2001,Ipswich Town,31,"24,7",14,-
+2001,Newcastle United,30,"23,9",19,-
+2001,Leicester City,33,"25,5",13,-
+2001,Liverpool FC,27,"25,1",17,-
+2001,Chelsea FC,33,"24,5",26,-
+2001,Fulham FC,28,"25,5",20,-
+2001,Manchester United,30,"26,1",20,-
+2002,Everton FC,32,"25,5",21,-
+2002,Tottenham Hotspur,32,"25,4",19,-
+2002,Southampton FC,33,"25,8",19,-
+2002,Manchester City,37,"24,9",28,-
+2002,Sunderland AFC,42,"24,4",27,-
+2002,Birmingham City,35,"26,1",21,-
+2002,Bolton Wanderers,35,"26,1",23,-
+2002,Charlton Athletic,29,"26,2",15,-
+2002,West Ham United,34,"25,8",16,-
+2002,Leeds United,32,"24,3",16,-
+2002,Aston Villa,29,"25,3",18,-
+2002,Chelsea FC,31,"25,2",23,-
+2002,Middlesbrough FC,32,"24,0",15,-
+2002,Newcastle United,33,"23,4",17,-
+2002,Fulham FC,30,"26,2",23,-
+2002,West Bromwich Albion,27,"25,7",12,-
+2002,Manchester United,27,"25,3",15,-
+2002,Arsenal FC,31,"25,2",21,-
+2002,Liverpool FC,29,"23,9",20,-
+2002,Blackburn Rovers,32,"25,7",19,-
+2003,Everton FC,31,"26,1",16,-
+2003,Tottenham Hotspur,31,"24,1",17,-
+2003,Blackburn Rovers,34,"25,3",23,-
+2003,Southampton FC,34,"25,5",20,-
+2003,Manchester City,33,"25,7",24,-
+2003,Birmingham City,27,"26,5",16,-
+2003,Bolton Wanderers,31,"26,5",20,-
+2003,Charlton Athletic,31,"25,7",15,-
+2003,Leeds United,34,"23,6",18,-
+2003,Aston Villa,27,"25,1",17,-
+2003,Wolverhampton Wanderers,34,"26,2",22,-
+2003,Chelsea FC,34,"24,8",26,-
+2003,Middlesbrough FC,35,"24,3",16,-
+2003,Newcastle United,31,"23,5",12,-
+2003,Fulham FC,34,"26,1",25,-
+2003,Leicester City,39,"26,9",19,-
+2003,Arsenal FC,32,"23,7",23,-
+2003,Liverpool FC,32,"23,6",23,-
+2003,Manchester United,30,"23,3",18,-
+2003,Portsmouth FC,37,"25,8",26,-
+2004,West Bromwich Albion,29,"26,1",16,"6,60 Mill. £"
+2004,Everton FC,25,"26,2",15,-
+2004,Liverpool FC,34,"23,9",24,-
+2004,Tottenham Hotspur,36,"23,3",20,-
+2004,Blackburn Rovers,35,"26,1",26,-
+2004,Southampton FC,40,"25,0",24,-
+2004,Manchester City,29,"25,4",17,-
+2004,Birmingham City,37,"25,1",21,-
+2004,Bolton Wanderers,28,"27,3",20,-
+2004,Charlton Athletic,26,"25,5",14,-
+2004,Aston Villa,26,"23,8",16,-
+2004,Chelsea FC,31,"23,4",23,-
+2004,Newcastle United,31,"24,7",15,-
+2004,Crystal Palace,36,"24,1",18,-
+2004,Fulham FC,34,"24,9",23,-
+2004,Portsmouth FC,33,"25,2",21,-
+2004,Norwich City,27,"26,0",12,-
+2004,Arsenal FC,32,"22,9",28,-
+2004,Middlesbrough FC,31,"24,6",13,-
+2004,Manchester United,32,"24,2",22,-
+2005,Chelsea FC,27,"24,5",19,"309,91 Mill. £"
+2005,Manchester United,29,"24,9",20,"252,49 Mill. £"
+2005,Arsenal FC,33,"23,3",28,"192,68 Mill. £"
+2005,Liverpool FC,32,"23,9",23,"164,91 Mill. £"
+2005,Tottenham Hotspur,30,"24,5",15,"128,04 Mill. £"
+2005,Newcastle United,25,"25,6",13,"124,26 Mill. £"
+2005,Everton FC,29,"26,3",19,"96,60 Mill. £"
+2005,Aston Villa,29,"24,0",16,"88,73 Mill. £"
+2005,Birmingham City,33,"25,5",17,"83,93 Mill. £"
+2005,Middlesbrough FC,35,"23,6",14,"83,27 Mill. £"
+2005,Portsmouth FC,35,"26,1",28,"79,86 Mill. £"
+2005,Charlton Athletic,36,"25,0",20,"65,98 Mill. £"
+2005,Fulham FC,31,"26,6",24,"62,39 Mill. £"
+2005,Blackburn Rovers,27,"26,7",21,"62,22 Mill. £"
+2005,Manchester City,28,"24,7",14,"61,95 Mill. £"
+2005,Bolton Wanderers,28,"26,0",21,"57,99 Mill. £"
+2005,West Bromwich Albion,31,"25,3",14,"48,44 Mill. £"
+2005,West Ham United,26,"25,3",11,"37,31 Mill. £"
+2005,Wigan Athletic,28,"27,4",18,"31,86 Mill. £"
+2005,Sunderland AFC,28,"23,4",18,"28,64 Mill. £"
+2006,Chelsea FC,37,"23,2",24,"355,41 Mill. £"
+2006,Manchester United,33,"24,2",18,"201,34 Mill. £"
+2006,Liverpool FC,34,"23,6",25,"195,80 Mill. £"
+2006,Arsenal FC,35,"22,8",30,"194,83 Mill. £"
+2006,Tottenham Hotspur,37,"23,1",20,"146,83 Mill. £"
+2006,Newcastle United,30,"25,0",19,"136,58 Mill. £"
+2006,Aston Villa,31,"24,8",18,"82,79 Mill. £"
+2006,West Ham United,33,"25,1",13,"82,39 Mill. £"
+2006,Everton FC,25,"25,0",16,"80,93 Mill. £"
+2006,Middlesbrough FC,32,"23,2",15,"77,84 Mill. £"
+2006,Manchester City,29,"24,4",14,"77,13 Mill. £"
+2006,Portsmouth FC,26,"26,4",16,"68,99 Mill. £"
+2006,Fulham FC,34,"26,3",26,"68,07 Mill. £"
+2006,Charlton Athletic,36,"24,7",23,"65,69 Mill. £"
+2006,Blackburn Rovers,29,"26,6",22,"63,67 Mill. £"
+2006,Bolton Wanderers,34,"24,6",26,"54,69 Mill. £"
+2006,Wigan Athletic,29,"26,0",18,"47,47 Mill. £"
+2006,Sheffield United,36,"25,1",18,"23,23 Mill. £"
+2006,Reading FC,34,"24,0",23,"20,68 Mill. £"
+2006,Watford FC,41,"23,1",20,"16,50 Mill. £"
+2007,Chelsea FC,37,"24,6",22,"372,37 Mill. £"
+2007,Manchester United,33,"24,2",19,"281,16 Mill. £"
+2007,Liverpool FC,40,"22,5",25,"227,39 Mill. £"
+2007,Arsenal FC,32,"22,3",28,"186,93 Mill. £"
+2007,Tottenham Hotspur,34,"23,7",20,"170,88 Mill. £"
+2007,Newcastle United,29,"25,1",19,"115,54 Mill. £"
+2007,Everton FC,29,"24,4",15,"98,47 Mill. £"
+2007,West Ham United,33,"25,0",13,"93,50 Mill. £"
+2007,Portsmouth FC,28,"25,4",19,"84,92 Mill. £"
+2007,Manchester City,30,"23,6",19,"78,50 Mill. £"
+2007,Middlesbrough FC,30,"23,6",14,"75,74 Mill. £"
+2007,Aston Villa,24,"24,3",10,"73,83 Mill. £"
+2007,Fulham FC,38,"26,7",30,"65,75 Mill. £"
+2007,Bolton Wanderers,30,"25,8",21,"57,75 Mill. £"
+2007,Blackburn Rovers,37,"24,3",30,"57,38 Mill. £"
+2007,Birmingham City,26,"24,1",16,"56,72 Mill. £"
+2007,Wigan Athletic,29,"25,5",19,"51,52 Mill. £"
+2007,Derby County,41,"25,8",24,"44,50 Mill. £"
+2007,Sunderland AFC,42,"24,2",31,"44,37 Mill. £"
+2007,Reading FC,43,"23,9",30,"34,56 Mill. £"
+2008,Chelsea FC,28,"25,6",21,"357,90 Mill. £"
+2008,Manchester United,31,"24,3",20,"313,37 Mill. £"
+2008,Liverpool FC,28,"23,9",24,"226,36 Mill. £"
+2008,Arsenal FC,38,"21,3",30,"220,75 Mill. £"
+2008,Tottenham Hotspur,35,"22,5",17,"187,09 Mill. £"
+2008,Manchester City,32,"24,0",20,"181,98 Mill. £"
+2008,Everton FC,28,"24,4",15,"143,04 Mill. £"
+2008,Newcastle United,32,"24,8",20,"118,76 Mill. £"
+2008,Portsmouth FC,31,"26,8",19,"115,72 Mill. £"
+2008,Aston Villa,21,"25,4",8,"98,38 Mill. £"
+2008,Sunderland AFC,31,"24,9",21,"80,32 Mill. £"
+2008,Blackburn Rovers,26,"26,4",21,"76,34 Mill. £"
+2008,Bolton Wanderers,28,"24,6",18,"72,51 Mill. £"
+2008,West Ham United,26,"24,3",14,"70,88 Mill. £"
+2008,Middlesbrough FC,30,"22,3",13,"64,81 Mill. £"
+2008,Fulham FC,32,"25,3",20,"64,33 Mill. £"
+2008,West Bromwich Albion,30,"24,6",21,"56,36 Mill. £"
+2008,Wigan Athletic,25,"25,7",18,"54,21 Mill. £"
+2008,Stoke City,29,"26,6",15,"43,74 Mill. £"
+2008,Hull City,27,"27,2",12,"33,99 Mill. £"
+2009,Chelsea FC,28,"26,8",20,"390,59 Mill. £"
+2009,Manchester United,33,"25,0",22,"319,40 Mill. £"
+2009,Liverpool FC,30,"24,4",24,"296,21 Mill. £"
+2009,Manchester City,40,"24,1",24,"277,11 Mill. £"
+2009,Arsenal FC,45,"21,7",31,"247,28 Mill. £"
+2009,Tottenham Hotspur,41,"23,3",20,"219,30 Mill. £"
+2009,Everton FC,42,"23,1",23,"194,96 Mill. £"
+2009,Aston Villa,31,"25,5",13,"141,15 Mill. £"
+2009,Sunderland AFC,38,"24,5",25,"115,90 Mill. £"
+2009,West Ham United,35,"23,8",19,"104,10 Mill. £"
+2009,Portsmouth FC,45,"25,4",29,"87,87 Mill. £"
+2009,Fulham FC,42,"25,3",28,"81,66 Mill. £"
+2009,Blackburn Rovers,35,"25,3",29,"79,46 Mill. £"
+2009,Bolton Wanderers,32,"25,3",18,"75,09 Mill. £"
+2009,Stoke City,37,"25,9",18,"67,58 Mill. £"
+2009,Hull City,37,"26,0",23,"66,57 Mill. £"
+2009,Wigan Athletic,35,"25,4",27,"65,03 Mill. £"
+2009,Birmingham City,36,"25,5",18,"55,88 Mill. £"
+2009,Wolverhampton Wanderers,37,"24,1",19,"52,54 Mill. £"
+2009,Burnley FC,33,"25,0",21,"33,84 Mill. £"
+2010,Chelsea FC,33,"24,5",22,"392,61 Mill. £"
+2010,Manchester United,43,"24,1",28,"338,05 Mill. £"
+2010,Manchester City,45,"23,4",27,"336,62 Mill. £"
+2010,Liverpool FC,42,"23,5",25,"321,64 Mill. £"
+2010,Arsenal FC,34,"23,4",27,"267,85 Mill. £"
+2010,Tottenham Hotspur,38,"24,7",20,"260,48 Mill. £"
+2010,Aston Villa,39,"25,1",20,"182,82 Mill. £"
+2010,Everton FC,32,"23,9",21,"157,10 Mill. £"
+2010,West Ham United,39,"25,1",23,"139,88 Mill. £"
+2010,Sunderland AFC,39,"23,7",19,"120,85 Mill. £"
+2010,Fulham FC,34,"27,5",27,"98,52 Mill. £"
+2010,Birmingham City,34,"25,8",18,"90,55 Mill. £"
+2010,Stoke City,33,"27,0",20,"84,83 Mill. £"
+2010,Newcastle United,38,"23,7",17,"84,17 Mill. £"
+2010,Blackburn Rovers,37,"25,1",29,"83,69 Mill. £"
+2010,Bolton Wanderers,34,"25,4",18,"82,19 Mill. £"
+2010,West Bromwich Albion,37,"24,3",23,"74,82 Mill. £"
+2010,Wolverhampton Wanderers,42,"23,7",23,"67,58 Mill. £"
+2010,Wigan Athletic,35,"24,0",25,"63,45 Mill. £"
+2010,Blackpool FC,45,"24,5",24,"33,53 Mill. £"
+2011,Chelsea FC,30,"26,3",21,"411,40 Mill. £"
+2011,Manchester City,34,"24,7",22,"406,38 Mill. £"
+2011,Manchester United,41,"23,6",22,"350,46 Mill. £"
+2011,Tottenham Hotspur,49,"24,2",23,"278,08 Mill. £"
+2011,Arsenal FC,44,"23,3",33,"274,93 Mill. £"
+2011,Liverpool FC,28,"25,0",16,"218,02 Mill. £"
+2011,Everton FC,34,"25,6",24,"167,35 Mill. £"
+2011,Aston Villa,34,"25,3",21,"138,69 Mill. £"
+2011,Sunderland AFC,33,"25,0",18,"110,04 Mill. £"
+2011,Newcastle United,35,"24,1",21,"106,06 Mill. £"
+2011,Stoke City,31,"27,9",15,"104,76 Mill. £"
+2011,Fulham FC,36,"26,1",28,"104,32 Mill. £"
+2011,Queens Park Rangers,46,"27,0",23,"93,32 Mill. £"
+2011,Bolton Wanderers,37,"25,2",20,"86,37 Mill. £"
+2011,Blackburn Rovers,36,"24,5",24,"79,77 Mill. £"
+2011,Wolverhampton Wanderers,35,"24,1",23,"72,16 Mill. £"
+2011,West Bromwich Albion,36,"25,0",22,"71,61 Mill. £"
+2011,Wigan Athletic,29,"25,4",22,"61,60 Mill. £"
+2011,Swansea City,32,"24,8",26,"35,68 Mill. £"
+2011,Norwich City,29,"24,5",12,"19,80 Mill. £"
+2012,Manchester City,38,"24,0",27,"448,93 Mill. £"
+2012,Manchester United,36,"24,1",21,"391,16 Mill. £"
+2012,Chelsea FC,31,"25,3",22,"359,48 Mill. £"
+2012,Tottenham Hotspur,35,"25,1",16,"272,38 Mill. £"
+2012,Arsenal FC,36,"23,8",29,"258,50 Mill. £"
+2012,Liverpool FC,38,"22,8",19,"242,40 Mill. £"
+2012,Newcastle United,36,"24,1",24,"167,42 Mill. £"
+2012,Queens Park Rangers,33,"28,1",18,"132,00 Mill. £"
+2012,Sunderland AFC,31,"25,4",18,"111,76 Mill. £"
+2012,Everton FC,26,"25,6",18,"109,82 Mill. £"
+2012,Fulham FC,33,"26,9",29,"100,76 Mill. £"
+2012,West Ham United,34,"25,1",18,"100,72 Mill. £"
+2012,Aston Villa,31,"24,1",19,"88,90 Mill. £"
+2012,Stoke City,29,"27,6",16,"87,21 Mill. £"
+2012,Swansea City,29,"25,9",25,"77,44 Mill. £"
+2012,West Bromwich Albion,29,"25,7",20,"73,04 Mill. £"
+2012,Wigan Athletic,35,"25,0",28,"71,72 Mill. £"
+2012,Norwich City,34,"25,3",16,"62,17 Mill. £"
+2012,Southampton FC,37,"24,3",16,"60,59 Mill. £"
+2012,Reading FC,31,"25,6",22,"38,72 Mill. £"
+2013,Chelsea FC,48,"23,8",40,"513,02 Mill. £"
+2013,Manchester United,34,"24,9",23,"450,34 Mill. £"
+2013,Manchester City,27,"25,7",21,"421,52 Mill. £"
+2013,Arsenal FC,37,"23,8",30,"292,78 Mill. £"
+2013,Tottenham Hotspur,36,"23,4",21,"260,48 Mill. £"
+2013,Liverpool FC,31,"23,8",22,"239,80 Mill. £"
+2013,Everton FC,30,"25,9",22,"191,40 Mill. £"
+2013,Newcastle United,33,"24,4",25,"166,19 Mill. £"
+2013,Sunderland AFC,37,"24,9",28,"133,10 Mill. £"
+2013,Fulham FC,44,"25,4",33,"130,55 Mill. £"
+2013,West Ham United,42,"25,3",21,"112,86 Mill. £"
+2013,Stoke City,29,"26,1",20,"110,88 Mill. £"
+2013,Swansea City,31,"25,5",27,"104,35 Mill. £"
+2013,Aston Villa,34,"24,0",20,"102,34 Mill. £"
+2013,Southampton FC,31,"23,9",16,"90,20 Mill. £"
+2013,Norwich City,29,"26,2",17,"84,26 Mill. £"
+2013,Cardiff City,39,"24,6",35,"81,27 Mill. £"
+2013,West Bromwich Albion,30,"26,6",20,"80,92 Mill. £"
+2013,Hull City,33,"26,4",22,"61,51 Mill. £"
+2013,Crystal Palace,41,"26,2",24,"56,54 Mill. £"
+2014,Chelsea FC,29,"25,8",23,"445,72 Mill. £"
+2014,Manchester United,28,"26,0",16,"383,02 Mill. £"
+2014,Manchester City,26,"29,1",21,"374,22 Mill. £"
+2014,Arsenal FC,29,"26,2",22,"350,90 Mill. £"
+2014,Liverpool FC,28,"26,0",18,"280,28 Mill. £"
+2014,Tottenham Hotspur,31,"26,0",20,"247,81 Mill. £"
+2014,Southampton FC,26,"26,7",18,"173,58 Mill. £"
+2014,Everton FC,26,"28,1",16,"146,43 Mill. £"
+2014,Newcastle United,34,"25,4",22,"116,82 Mill. £"
+2014,West Ham United,24,"28,3",15,"102,30 Mill. £"
+2014,Swansea City,27,"27,0",24,"89,76 Mill. £"
+2014,Stoke City,27,"28,5",21,"87,56 Mill. £"
+2014,Aston Villa,30,"26,8",18,"87,34 Mill. £"
+2014,Hull City,30,"27,7",20,"81,49 Mill. £"
+2014,Crystal Palace,36,"27,9",22,"81,18 Mill. £"
+2014,Queens Park Rangers,29,"28,3",17,"78,06 Mill. £"
+2014,Sunderland AFC,21,"28,4",11,"71,50 Mill. £"
+2014,West Bromwich Albion,23,"28,6",17,"67,41 Mill. £"
+2014,Leicester City,29,"28,7",17,"51,61 Mill. £"
+2014,Burnley FC,27,"27,6",11,"42,28 Mill. £"
