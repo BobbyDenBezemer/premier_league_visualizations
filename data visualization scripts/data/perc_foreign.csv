@@ -1,27 +1,27 @@
 Team,Year,Perc_foreign
-Arsenal FC,1992,25.81
-Arsenal FC,1993,26.92
-Arsenal FC,1994,28.12
-Arsenal FC,1995,26.67
-Arsenal FC,1996,31.25
-Arsenal FC,1997,43.33
-Arsenal FC,1998,52.78
-Arsenal FC,1999,54.55
-Arsenal FC,2000,66.67
-Arsenal FC,2001,55.56
-Arsenal FC,2002,67.74
-Arsenal FC,2003,71.88
-Arsenal FC,2004,87.5
-Arsenal FC,2005,84.85
-Arsenal FC,2006,85.71
-Arsenal FC,2007,87.5
-Arsenal FC,2008,78.95
-Arsenal FC,2009,68.89
-Arsenal FC,2010,79.41
-Arsenal FC,2011,75.0
-Arsenal FC,2012,80.56
-Arsenal FC,2013,81.08
-Arsenal FC,2014,75.86
+Arsenal,1992,25.81
+Arsenal,1993,26.92
+Arsenal,1994,28.12
+Arsenal,1995,26.67
+Arsenal,1996,31.25
+Arsenal,1997,43.33
+Arsenal,1998,52.78
+Arsenal,1999,54.55
+Arsenal,2000,66.67
+Arsenal,2001,55.56
+Arsenal,2002,67.74
+Arsenal,2003,71.88
+Arsenal,2004,87.5
+Arsenal,2005,84.85
+Arsenal,2006,85.71
+Arsenal,2007,87.5
+Arsenal,2008,78.95
+Arsenal,2009,68.89
+Arsenal,2010,79.41
+Arsenal,2011,75.0
+Arsenal,2012,80.56
+Arsenal,2013,81.08
+Arsenal,2014,75.86
 Aston Villa,1992,33.33
 Aston Villa,1993,37.04
 Aston Villa,1994,
@@ -45,29 +45,29 @@ Aston Villa,2011,61.76
 Aston Villa,2012,61.29
 Aston Villa,2013,58.82
 Aston Villa,2014,60.0
-Barnsley FC,1992,
-Barnsley FC,1993,
-Barnsley FC,1994,
-Barnsley FC,1995,
-Barnsley FC,1996,
-Barnsley FC,1997,44.44
-Barnsley FC,1998,
-Barnsley FC,1999,
-Barnsley FC,2000,
-Barnsley FC,2001,
-Barnsley FC,2002,
-Barnsley FC,2003,
-Barnsley FC,2004,
-Barnsley FC,2005,
-Barnsley FC,2006,
-Barnsley FC,2007,
-Barnsley FC,2008,
-Barnsley FC,2009,
-Barnsley FC,2010,
-Barnsley FC,2011,
-Barnsley FC,2012,
-Barnsley FC,2013,
-Barnsley FC,2014,
+Barnsley,1992,
+Barnsley,1993,
+Barnsley,1994,
+Barnsley,1995,
+Barnsley,1996,
+Barnsley,1997,44.44
+Barnsley,1998,
+Barnsley,1999,
+Barnsley,2000,
+Barnsley,2001,
+Barnsley,2002,
+Barnsley,2003,
+Barnsley,2004,
+Barnsley,2005,
+Barnsley,2006,
+Barnsley,2007,
+Barnsley,2008,
+Barnsley,2009,
+Barnsley,2010,
+Barnsley,2011,
+Barnsley,2012,
+Barnsley,2013,
+Barnsley,2014,
 Birmingham City,1992,
 Birmingham City,1993,
 Birmingham City,1994,
@@ -114,29 +114,29 @@ Blackburn Rovers,2011,66.67
 Blackburn Rovers,2012,
 Blackburn Rovers,2013,
 Blackburn Rovers,2014,
-Blackpool FC,1992,
-Blackpool FC,1993,
-Blackpool FC,1994,
-Blackpool FC,1995,
-Blackpool FC,1996,
-Blackpool FC,1997,
-Blackpool FC,1998,
-Blackpool FC,1999,
-Blackpool FC,2000,
-Blackpool FC,2001,
-Blackpool FC,2002,
-Blackpool FC,2003,
-Blackpool FC,2004,
-Blackpool FC,2005,
-Blackpool FC,2006,
-Blackpool FC,2007,
-Blackpool FC,2008,
-Blackpool FC,2009,
-Blackpool FC,2010,53.33
-Blackpool FC,2011,
-Blackpool FC,2012,
-Blackpool FC,2013,
-Blackpool FC,2014,
+Blackpool,1992,
+Blackpool,1993,
+Blackpool,1994,
+Blackpool,1995,
+Blackpool,1996,
+Blackpool,1997,
+Blackpool,1998,
+Blackpool,1999,
+Blackpool,2000,
+Blackpool,2001,
+Blackpool,2002,
+Blackpool,2003,
+Blackpool,2004,
+Blackpool,2005,
+Blackpool,2006,
+Blackpool,2007,
+Blackpool,2008,
+Blackpool,2009,
+Blackpool,2010,53.33
+Blackpool,2011,
+Blackpool,2012,
+Blackpool,2013,
+Blackpool,2014,
 Bolton Wanderers,1992,
 Bolton Wanderers,1993,
 Bolton Wanderers,1994,
@@ -183,29 +183,29 @@ Bradford City,2011,
 Bradford City,2012,
 Bradford City,2013,
 Bradford City,2014,
-Burnley FC,1992,
-Burnley FC,1993,
-Burnley FC,1994,
-Burnley FC,1995,
-Burnley FC,1996,
-Burnley FC,1997,
-Burnley FC,1998,
-Burnley FC,1999,
-Burnley FC,2000,
-Burnley FC,2001,
-Burnley FC,2002,
-Burnley FC,2003,
-Burnley FC,2004,
-Burnley FC,2005,
-Burnley FC,2006,
-Burnley FC,2007,
-Burnley FC,2008,
-Burnley FC,2009,63.64
-Burnley FC,2010,
-Burnley FC,2011,
-Burnley FC,2012,
-Burnley FC,2013,
-Burnley FC,2014,40.74
+Burnley,1992,
+Burnley,1993,
+Burnley,1994,
+Burnley,1995,
+Burnley,1996,
+Burnley,1997,
+Burnley,1998,
+Burnley,1999,
+Burnley,2000,
+Burnley,2001,
+Burnley,2002,
+Burnley,2003,
+Burnley,2004,
+Burnley,2005,
+Burnley,2006,
+Burnley,2007,
+Burnley,2008,
+Burnley,2009,63.64
+Burnley,2010,
+Burnley,2011,
+Burnley,2012,
+Burnley,2013,
+Burnley,2014,40.74
 Cardiff City,1992,
 Cardiff City,1993,
 Cardiff City,1994,
@@ -252,29 +252,29 @@ Charlton Athletic,2011,
 Charlton Athletic,2012,
 Charlton Athletic,2013,
 Charlton Athletic,2014,
-Chelsea FC,1992,48.57
-Chelsea FC,1993,45.45
-Chelsea FC,1994,43.33
-Chelsea FC,1995,50.0
-Chelsea FC,1996,53.12
-Chelsea FC,1997,51.43
-Chelsea FC,1998,60.71
-Chelsea FC,1999,65.62
-Chelsea FC,2000,80.0
-Chelsea FC,2001,78.79
-Chelsea FC,2002,74.19
-Chelsea FC,2003,76.47
-Chelsea FC,2004,74.19
-Chelsea FC,2005,70.37
-Chelsea FC,2006,64.86
-Chelsea FC,2007,59.46
-Chelsea FC,2008,75.0
-Chelsea FC,2009,71.43
-Chelsea FC,2010,66.67
-Chelsea FC,2011,70.0
-Chelsea FC,2012,70.97
-Chelsea FC,2013,83.33
-Chelsea FC,2014,79.31
+Chelsea,1992,48.57
+Chelsea,1993,45.45
+Chelsea,1994,43.33
+Chelsea,1995,50.0
+Chelsea,1996,53.12
+Chelsea,1997,51.43
+Chelsea,1998,60.71
+Chelsea,1999,65.62
+Chelsea,2000,80.0
+Chelsea,2001,78.79
+Chelsea,2002,74.19
+Chelsea,2003,76.47
+Chelsea,2004,74.19
+Chelsea,2005,70.37
+Chelsea,2006,64.86
+Chelsea,2007,59.46
+Chelsea,2008,75.0
+Chelsea,2009,71.43
+Chelsea,2010,66.67
+Chelsea,2011,70.0
+Chelsea,2012,70.97
+Chelsea,2013,83.33
+Chelsea,2014,79.31
 Coventry City,1992,33.33
 Coventry City,1993,40.74
 Coventry City,1994,42.86
@@ -344,52 +344,52 @@ Derby County,2011,
 Derby County,2012,
 Derby County,2013,
 Derby County,2014,
-Everton FC,1992,30.77
-Everton FC,1993,26.09
-Everton FC,1994,26.92
-Everton FC,1995,32.0
-Everton FC,1996,32.14
-Everton FC,1997,38.89
-Everton FC,1998,47.22
-Everton FC,1999,44.74
-Everton FC,2000,57.14
-Everton FC,2001,61.29
-Everton FC,2002,65.62
-Everton FC,2003,51.61
-Everton FC,2004,60.0
-Everton FC,2005,65.52
-Everton FC,2006,64.0
-Everton FC,2007,51.72
-Everton FC,2008,53.57
-Everton FC,2009,54.76
-Everton FC,2010,65.62
-Everton FC,2011,70.59
-Everton FC,2012,69.23
-Everton FC,2013,73.33
-Everton FC,2014,61.54
-Fulham FC,1992,
-Fulham FC,1993,
-Fulham FC,1994,
-Fulham FC,1995,
-Fulham FC,1996,
-Fulham FC,1997,
-Fulham FC,1998,
-Fulham FC,1999,
-Fulham FC,2000,
-Fulham FC,2001,71.43
-Fulham FC,2002,76.67
-Fulham FC,2003,73.53
-Fulham FC,2004,67.65
-Fulham FC,2005,77.42
-Fulham FC,2006,76.47
-Fulham FC,2007,78.95
-Fulham FC,2008,62.5
-Fulham FC,2009,66.67
-Fulham FC,2010,79.41
-Fulham FC,2011,77.78
-Fulham FC,2012,87.88
-Fulham FC,2013,75.0
-Fulham FC,2014,
+Everton,1992,30.77
+Everton,1993,26.09
+Everton,1994,26.92
+Everton,1995,32.0
+Everton,1996,32.14
+Everton,1997,38.89
+Everton,1998,47.22
+Everton,1999,44.74
+Everton,2000,57.14
+Everton,2001,61.29
+Everton,2002,65.62
+Everton,2003,51.61
+Everton,2004,60.0
+Everton,2005,65.52
+Everton,2006,64.0
+Everton,2007,51.72
+Everton,2008,53.57
+Everton,2009,54.76
+Everton,2010,65.62
+Everton,2011,70.59
+Everton,2012,69.23
+Everton,2013,73.33
+Everton,2014,61.54
+Fulham,1992,
+Fulham,1993,
+Fulham,1994,
+Fulham,1995,
+Fulham,1996,
+Fulham,1997,
+Fulham,1998,
+Fulham,1999,
+Fulham,2000,
+Fulham,2001,71.43
+Fulham,2002,76.67
+Fulham,2003,73.53
+Fulham,2004,67.65
+Fulham,2005,77.42
+Fulham,2006,76.47
+Fulham,2007,78.95
+Fulham,2008,62.5
+Fulham,2009,66.67
+Fulham,2010,79.41
+Fulham,2011,77.78
+Fulham,2012,87.88
+Fulham,2013,75.0
+Fulham,2014,
 Hull City,1992,
 Hull City,1993,
 Hull City,1994,
@@ -482,29 +482,29 @@ Leicester City,2011,
 Leicester City,2012,
 Leicester City,2013,
 Leicester City,2014,58.62
-Liverpool FC,1992,45.16
-Liverpool FC,1993,38.71
-Liverpool FC,1994,42.31
-Liverpool FC,1995,40.0
-Liverpool FC,1996,40.74
-Liverpool FC,1997,50.0
-Liverpool FC,1998,57.14
-Liverpool FC,1999,69.7
-Liverpool FC,2000,70.0
-Liverpool FC,2001,62.96
-Liverpool FC,2002,68.97
-Liverpool FC,2003,71.88
-Liverpool FC,2004,70.59
-Liverpool FC,2005,71.88
-Liverpool FC,2006,73.53
-Liverpool FC,2007,62.5
-Liverpool FC,2008,85.71
-Liverpool FC,2009,80.0
-Liverpool FC,2010,59.52
-Liverpool FC,2011,57.14
-Liverpool FC,2012,50.0
-Liverpool FC,2013,70.97
-Liverpool FC,2014,64.29
+Liverpool,1992,45.16
+Liverpool,1993,38.71
+Liverpool,1994,42.31
+Liverpool,1995,40.0
+Liverpool,1996,40.74
+Liverpool,1997,50.0
+Liverpool,1998,57.14
+Liverpool,1999,69.7
+Liverpool,2000,70.0
+Liverpool,2001,62.96
+Liverpool,2002,68.97
+Liverpool,2003,71.88
+Liverpool,2004,70.59
+Liverpool,2005,71.88
+Liverpool,2006,73.53
+Liverpool,2007,62.5
+Liverpool,2008,85.71
+Liverpool,2009,80.0
+Liverpool,2010,59.52
+Liverpool,2011,57.14
+Liverpool,2012,50.0
+Liverpool,2013,70.97
+Liverpool,2014,64.29
 Manchester City,1992,37.5
 Manchester City,1993,38.24
 Manchester City,1994,35.71
@@ -551,29 +551,29 @@ Manchester United,2011,53.66
 Manchester United,2012,58.33
 Manchester United,2013,67.65
 Manchester United,2014,57.14
-Middlesbrough FC,1992,38.46
-Middlesbrough FC,1993,
-Middlesbrough FC,1994,
-Middlesbrough FC,1995,36.67
-Middlesbrough FC,1996,44.12
-Middlesbrough FC,1997,
-Middlesbrough FC,1998,41.94
-Middlesbrough FC,1999,47.06
-Middlesbrough FC,2000,47.06
-Middlesbrough FC,2001,48.57
-Middlesbrough FC,2002,46.88
-Middlesbrough FC,2003,45.71
-Middlesbrough FC,2004,41.94
-Middlesbrough FC,2005,40.0
-Middlesbrough FC,2006,46.88
-Middlesbrough FC,2007,46.67
-Middlesbrough FC,2008,43.33
-Middlesbrough FC,2009,
-Middlesbrough FC,2010,
-Middlesbrough FC,2011,
-Middlesbrough FC,2012,
-Middlesbrough FC,2013,
-Middlesbrough FC,2014,
+Middlesbrough,1992,38.46
+Middlesbrough,1993,
+Middlesbrough,1994,
+Middlesbrough,1995,36.67
+Middlesbrough,1996,44.12
+Middlesbrough,1997,
+Middlesbrough,1998,41.94
+Middlesbrough,1999,47.06
+Middlesbrough,2000,47.06
+Middlesbrough,2001,48.57
+Middlesbrough,2002,46.88
+Middlesbrough,2003,45.71
+Middlesbrough,2004,41.94
+Middlesbrough,2005,40.0
+Middlesbrough,2006,46.88
+Middlesbrough,2007,46.67
+Middlesbrough,2008,43.33
+Middlesbrough,2009,
+Middlesbrough,2010,
+Middlesbrough,2011,
+Middlesbrough,2012,
+Middlesbrough,2013,
+Middlesbrough,2014,
 Newcastle United,1992,
 Newcastle United,1993,32.14
 Newcastle United,1994,33.33
@@ -666,29 +666,29 @@ Oldham Athletic,2011,
 Oldham Athletic,2012,
 Oldham Athletic,2013,
 Oldham Athletic,2014,
-Portsmouth FC,1992,
-Portsmouth FC,1993,
-Portsmouth FC,1994,
-Portsmouth FC,1995,
-Portsmouth FC,1996,
-Portsmouth FC,1997,
-Portsmouth FC,1998,
-Portsmouth FC,1999,
-Portsmouth FC,2000,
-Portsmouth FC,2001,
-Portsmouth FC,2002,
-Portsmouth FC,2003,70.27
-Portsmouth FC,2004,63.64
-Portsmouth FC,2005,80.0
-Portsmouth FC,2006,61.54
-Portsmouth FC,2007,67.86
-Portsmouth FC,2008,61.29
-Portsmouth FC,2009,64.44
-Portsmouth FC,2010,
-Portsmouth FC,2011,
-Portsmouth FC,2012,
-Portsmouth FC,2013,
-Portsmouth FC,2014,
+Portsmouth,1992,
+Portsmouth,1993,
+Portsmouth,1994,
+Portsmouth,1995,
+Portsmouth,1996,
+Portsmouth,1997,
+Portsmouth,1998,
+Portsmouth,1999,
+Portsmouth,2000,
+Portsmouth,2001,
+Portsmouth,2002,
+Portsmouth,2003,70.27
+Portsmouth,2004,63.64
+Portsmouth,2005,80.0
+Portsmouth,2006,61.54
+Portsmouth,2007,67.86
+Portsmouth,2008,61.29
+Portsmouth,2009,64.44
+Portsmouth,2010,
+Portsmouth,2011,
+Portsmouth,2012,
+Portsmouth,2013,
+Portsmouth,2014,
 Queens Park Rangers,1992,25.0
 Queens Park Rangers,1993,25.0
 Queens Park Rangers,1994,29.17
@@ -712,29 +712,29 @@ Queens Park Rangers,2011,50.0
 Queens Park Rangers,2012,54.55
 Queens Park Rangers,2013,
 Queens Park Rangers,2014,58.62
-Reading FC,1992,
-Reading FC,1993,
-Reading FC,1994,
-Reading FC,1995,
-Reading FC,1996,
-Reading FC,1997,
-Reading FC,1998,
-Reading FC,1999,
-Reading FC,2000,
-Reading FC,2001,
-Reading FC,2002,
-Reading FC,2003,
-Reading FC,2004,
-Reading FC,2005,
-Reading FC,2006,67.65
-Reading FC,2007,69.77
-Reading FC,2008,
-Reading FC,2009,
-Reading FC,2010,
-Reading FC,2011,
-Reading FC,2012,70.97
-Reading FC,2013,
-Reading FC,2014,
+Reading,1992,
+Reading,1993,
+Reading,1994,
+Reading,1995,
+Reading,1996,
+Reading,1997,
+Reading,1998,
+Reading,1999,
+Reading,2000,
+Reading,2001,
+Reading,2002,
+Reading,2003,
+Reading,2004,
+Reading,2005,
+Reading,2006,67.65
+Reading,2007,69.77
+Reading,2008,
+Reading,2009,
+Reading,2010,
+Reading,2011,
+Reading,2012,70.97
+Reading,2013,
+Reading,2014,
 Sheffield United,1992,22.22
 Sheffield United,1993,28.57
 Sheffield United,1994,
@@ -781,29 +781,29 @@ Sheffield Wednesday,2011,
 Sheffield Wednesday,2012,
 Sheffield Wednesday,2013,
 Sheffield Wednesday,2014,
-Southampton FC,1992,24.0
-Southampton FC,1993,22.58
-Southampton FC,1994,30.77
-Southampton FC,1995,24.0
-Southampton FC,1996,38.24
-Southampton FC,1997,40.54
-Southampton FC,1998,38.24
-Southampton FC,1999,44.44
-Southampton FC,2000,51.72
-Southampton FC,2001,51.52
-Southampton FC,2002,57.58
-Southampton FC,2003,58.82
-Southampton FC,2004,60.0
-Southampton FC,2005,
-Southampton FC,2006,
-Southampton FC,2007,
-Southampton FC,2008,
-Southampton FC,2009,
-Southampton FC,2010,
-Southampton FC,2011,
-Southampton FC,2012,43.24
-Southampton FC,2013,51.61
-Southampton FC,2014,69.23
+Southampton,1992,24.0
+Southampton,1993,22.58
+Southampton,1994,30.77
+Southampton,1995,24.0
+Southampton,1996,38.24
+Southampton,1997,40.54
+Southampton,1998,38.24
+Southampton,1999,44.44
+Southampton,2000,51.72
+Southampton,2001,51.52
+Southampton,2002,57.58
+Southampton,2003,58.82
+Southampton,2004,60.0
+Southampton,2005,
+Southampton,2006,
+Southampton,2007,
+Southampton,2008,
+Southampton,2009,
+Southampton,2010,
+Southampton,2011,
+Southampton,2012,43.24
+Southampton,2013,51.61
+Southampton,2014,69.23
 Stoke City,1992,
 Stoke City,1993,
 Stoke City,1994,
@@ -827,29 +827,29 @@ Stoke City,2011,48.39
 Stoke City,2012,55.17
 Stoke City,2013,68.97
 Stoke City,2014,77.78
-Sunderland AFC,1992,
-Sunderland AFC,1993,
-Sunderland AFC,1994,
-Sunderland AFC,1995,
-Sunderland AFC,1996,30.0
-Sunderland AFC,1997,
-Sunderland AFC,1998,
-Sunderland AFC,1999,51.52
-Sunderland AFC,2000,61.11
-Sunderland AFC,2001,75.86
-Sunderland AFC,2002,64.29
-Sunderland AFC,2003,
-Sunderland AFC,2004,
-Sunderland AFC,2005,64.29
-Sunderland AFC,2006,
-Sunderland AFC,2007,73.81
-Sunderland AFC,2008,67.74
-Sunderland AFC,2009,65.79
-Sunderland AFC,2010,48.72
-Sunderland AFC,2011,54.55
-Sunderland AFC,2012,58.06
-Sunderland AFC,2013,75.68
-Sunderland AFC,2014,52.38
+Sunderland,1992,
+Sunderland,1993,
+Sunderland,1994,
+Sunderland,1995,
+Sunderland,1996,30.0
+Sunderland,1997,
+Sunderland,1998,
+Sunderland,1999,51.52
+Sunderland,2000,61.11
+Sunderland,2001,75.86
+Sunderland,2002,64.29
+Sunderland,2003,
+Sunderland,2004,
+Sunderland,2005,64.29
+Sunderland,2006,
+Sunderland,2007,73.81
+Sunderland,2008,67.74
+Sunderland,2009,65.79
+Sunderland,2010,48.72
+Sunderland,2011,54.55
+Sunderland,2012,58.06
+Sunderland,2013,75.68
+Sunderland,2014,52.38
 Swansea City,1992,
 Swansea City,1993,
 Swansea City,1994,
@@ -919,29 +919,29 @@ Tottenham Hotspur,2011,46.94
 Tottenham Hotspur,2012,45.71
 Tottenham Hotspur,2013,58.33
 Tottenham Hotspur,2014,64.52
-Watford FC,1992,
-Watford FC,1993,
-Watford FC,1994,
-Watford FC,1995,
-Watford FC,1996,
-Watford FC,1997,
-Watford FC,1998,
-Watford FC,1999,48.39
-Watford FC,2000,
-Watford FC,2001,
-Watford FC,2002,
-Watford FC,2003,
-Watford FC,2004,
-Watford FC,2005,
-Watford FC,2006,48.78
-Watford FC,2007,
-Watford FC,2008,
-Watford FC,2009,
-Watford FC,2010,
-Watford FC,2011,
-Watford FC,2012,
-Watford FC,2013,
-Watford FC,2014,
+Watford,1992,
+Watford,1993,
+Watford,1994,
+Watford,1995,
+Watford,1996,
+Watford,1997,
+Watford,1998,
+Watford,1999,48.39
+Watford,2000,
+Watford,2001,
+Watford,2002,
+Watford,2003,
+Watford,2004,
+Watford,2005,
+Watford,2006,48.78
+Watford,2007,
+Watford,2008,
+Watford,2009,
+Watford,2010,
+Watford,2011,
+Watford,2012,
+Watford,2013,
+Watford,2014,
 West Bromwich Albion,1992,
 West Bromwich Albion,1993,
 West Bromwich Albion,1994,
@@ -1011,29 +1011,29 @@ Wigan Athletic,2011,75.86
 Wigan Athletic,2012,80.0
 Wigan Athletic,2013,
 Wigan Athletic,2014,
-Wimbledon FC,1992,33.33
-Wimbledon FC,1993,30.77
-Wimbledon FC,1994,40.0
-Wimbledon FC,1995,43.33
-Wimbledon FC,1996,53.85
-Wimbledon FC,1997,56.25
-Wimbledon FC,1998,61.29
-Wimbledon FC,1999,64.71
-Wimbledon FC,2000,
-Wimbledon FC,2001,
-Wimbledon FC,2002,
-Wimbledon FC,2003,
-Wimbledon FC,2004,
-Wimbledon FC,2005,
-Wimbledon FC,2006,
-Wimbledon FC,2007,
-Wimbledon FC,2008,
-Wimbledon FC,2009,
-Wimbledon FC,2010,
-Wimbledon FC,2011,
-Wimbledon FC,2012,
-Wimbledon FC,2013,
-Wimbledon FC,2014,
+Wimbledon,1992,33.33
+Wimbledon,1993,30.77
+Wimbledon,1994,40.0
+Wimbledon,1995,43.33
+Wimbledon,1996,53.85
+Wimbledon,1997,56.25
+Wimbledon,1998,61.29
+Wimbledon,1999,64.71
+Wimbledon,2000,
+Wimbledon,2001,
+Wimbledon,2002,
+Wimbledon,2003,
+Wimbledon,2004,
+Wimbledon,2005,
+Wimbledon,2006,
+Wimbledon,2007,
+Wimbledon,2008,
+Wimbledon,2009,
+Wimbledon,2010,
+Wimbledon,2011,
+Wimbledon,2012,
+Wimbledon,2013,
+Wimbledon,2014,
 Wolverhampton Wanderers,1992,
 Wolverhampton Wanderers,1993,
 Wolverhampton Wanderers,1994,

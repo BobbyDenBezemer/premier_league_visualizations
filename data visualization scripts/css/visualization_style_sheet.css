@@ -1,48 +1,70 @@
 .navbar-brand {
-        font-size: 1.8em;
-    }
+    font-size: 1.8em;
+}
 
-    #topContainer {
-        background-image: url("stadium1.jpg");
-        height: 400px;
-        width: 100%;
-        background-size: cover;
-        opacity: 0.;
-    }
+body {
+  padding-top: 20px;
+  font-size: 16px;
+  background: transparent;
+}
 
-    #topRow {
-        margin-top: 100px;
-        text-align: center;
-    }
+ /* Override B3 .panel adding a subtly transparent background */
+.panel {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+}
 
-    #topRow h1 {
-        font-size: 300%;
-    }
+.margin-base-vertical {
+  margin: 40px 0;
+}
 
-    .marginTop {
-        margin-top: 30px;
-    }
+#topContainer {
+  background-image: url("stadium1.jpg");
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  opacity: 0.;
+}
 
-    .marginTopMore {
-        margin-top: 200px;
-    }
+#topRow {
+  margin-top: 100px;
+  text-align: center;
+}
 
-    .center {
-        text-align: center;
-    }
+.btn-primary {
+  margin-left: 20px;
+  margin-bottom: 30px; 
+  text-align: center;
+}
 
-    #contentIm {
-        opacity: 1;
-    }
+.btn-primary a {
+  color: white;
+}
 
-    #footer {
-        background-color: #B0D1FB;
 
-    }
+#topRow h1 {
+  font-size: 300%;
+}
 
-    .marginBottom {
-        margin-bottom: 30px
-    }
+.marginTop {
+      margin-top: 30px;
+}
+
+.center {
+  text-align: center;
+}
+
+#contentIm {
+  opacity: 1;
+}
+
+#footer {
+  background-color: #B0D1FB;
+}
+
+.marginBottom {
+  margin-bottom: 30px
+}
 
 .title {
     margin-top: 100px;
@@ -81,20 +103,9 @@
 .subunit.IRL { fill: #ffffff;
 stroke: none; }
 
-.subunit-boundary {
-  fill: none;
-  stroke: #777;
-  stroke-dasharray: 2,2;
-  stroke-linejoin: round;
-}
-
-.subunit-boundary-hidden {
-    fill: none;
-    stroke: none;
-}
-
 .stadium {
     fill: steelblue;
+    fill-opacity: 0.8;
 }
 
 .fadeIn {
@@ -141,7 +152,6 @@ stroke: none; }
 }
 
 .line {
-  stroke: steelblue;
   stroke-width: 2px;
   fill: none;
 }

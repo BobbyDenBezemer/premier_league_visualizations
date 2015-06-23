@@ -1,23 +1,23 @@
 "use strict";
 
 // declare the margins
-var margin = {top: 20, right: 20, bottom: 60, left: 50},
-    width_map = 950 - margin.left - margin.right,
+var margin = {top: 20, right: 20, bottom: 80, left: 50},
+    width_map = 650 - margin.left - margin.right,
     height_map = 650 - margin.top - margin.bottom,
-    width_line_graph = 550 - margin.left - margin.right,
-    height_line_graph = 280 - margin.top - margin.bottom;
+    width_line_graph = 650 - (margin.left *2) - margin.right,
+    height_line_graph = 400 - margin.top - margin.bottom;
 
 // append the svg element to the body
 var uk_map = d3.select(".ukMap").append("svg")
     .attr("width", width_map)
     .attr("height", height_map)
 
-// create a projection, zoom in and set center op map to middle
+// create a projection, zoom in and set center on map to middle
 var projection =  d3.geo.albers()
     .center([0, 55.4])
     .rotate([4.4, 0])
     .parallels([50, 60])
-    .scale(4500)
+    .scale(4200)
     .translate([width_map / 2, height_map / 5])
 
 // create a path variable using the projection
@@ -29,7 +29,6 @@ var capacityScale = d3.scale.linear()
   .range([4, 8]);
 
 // append the linegraph svg
-// Adds the svg canvas
 var line_graph = d3.select("#foreignPlayers")
     .append("svg")
     .attr("width", width_line_graph + margin.left + margin.right)
@@ -49,10 +48,14 @@ var xAxisGraph = d3.svg.axis().scale(x)
 var yAxisGraph = d3.svg.axis().scale(y)
     .orient("left").ticks(5);
 
+// main function that draws the map and line
 var drawMapLineGraph = function(error, data){
+  // give each dataset its own variable name
   var uk = data[0];
   var stadium_data = data[1];
   var data_foreign = data[2];
+  console.log(stadium_data);
+  console.log(data_foreign);
 
   // convert floats to ints
   stadium_data.forEach(function(d) {
@@ -71,108 +74,102 @@ var drawMapLineGraph = function(error, data){
   // make a countries variable that can be directly accessed
   var admin_units = uk.objects.subunits
 
+  // adding the map paths such that the map is drawn
   uk_map.append("path")
   	.datum(topojson.feature(uk, admin_units))
   	.attr("d", path);
 
+  // give each country in the UK its own class
   uk_map.selectAll(".subunit")
     .data(topojson.feature(uk, admin_units).features)
   	.enter().append("path")
     .attr("class", function(d) { return "subunit " + d.id; })
-    .attr("d", path);
+    .attr("d", path);   
 
-   uk_map.append("path")
-    .datum(topojson.mesh(uk, admin_units, function(a, b) { return a !== b && a.id !== "IRL" || a.id !== "NIR" || a.id !== "SCT"}))
-    .attr("d", path)
-    .attr("class", "subunit-boundary");
+  // timer that keeps track of which yearly animation
+  var yearTimer = 0; 
 
-    uk_map.append("path")
-    .datum(topojson.mesh(uk, admin_units,
-    	function(a, b){ return a === b && (a !== "ENG" || a !== "WLS") ||
-    					a !== b && (a === "SCT" || a === "NIR" || a === "IRL")}))
-    .attr("d", path)
-    .attr("class", "subunit-boundary-hidden")
+  // calculate the number of years in dataset and use this for the height variable
+  var years = isUnique(stadium_data, "Season");
+  var number_of_years = years.length;
 
-    // timer that keeps track of which yearly animation
-    var yearTimer = 0; 
+  // deciding on the domain of capacity scalee
+  capacityScale.domain([10000, 80000]);
+  var point, pointEnter, tmp
+  var oldData;
 
-    // calculate the number of years in dataset and use this for the height variable
-    var years = isUnique(stadium_data, "Season");
-    var number_of_years = years.length;
+  // making the axis scale
+  var width_axis = width_map - margin.left;
+  var xScale = d3.scale.linear()
+    .domain([d3.min(stadium_data, function(d){return d.Season}), 
+    d3.max(stadium_data, function(d){return d.Season})])
+          .range([margin.left, width_axis]);
 
-    // deciding on the domain of capacity scalee
-    capacityScale.domain([10000, 80000]);
-    var point, pointEnter, tmp
-    var oldData;
+  var xAxisMap = d3.svg.axis()
+    .scale(xScale)
+    .orient("bottom");
 
-    // making the axis scale
-    var xScale = d3.scale.linear()
-      .domain([d3.min(stadium_data, function(d){return d.Season}), 
-      d3.max(stadium_data, function(d){return d.Season})])
-      .range([margin.left, width_map - margin.left]);
+  // append axis
+  uk_map.append("g")
+    .attr("class", "axis")  //Assign "axis" class
+    .attr("transform", "translate(0," + (height_map - 25) + ")")
+    .call(xAxisMap);
 
-    var xAxisMap = d3.svg.axis()
-      .scale(xScale)
-      .orient("bottom");
+  // Scale the range of the data
+  x.domain([1992, 2014]);
+  y.domain([0, 100]);
 
-    // append axis
-    uk_map.append("g")
-      .attr("class", "axis")  //Assign "axis" class
-      .attr("transform", "translate(0," + (height_map - 25) + ")")
-      .call(xAxisMap);
+  // making the function for the linegraph
+  var valueline = d3.svg.line()
+    .x(function(d) { return x(d.Year); })
+    .y(function(d) { return y(d.Perc_foreign); })
+    .interpolate("basis");
 
+  // making a legend variable
+  var legend;
+  var horizontal_spacing = 180;
+  var vertical_spacing = 10;
 
-    // Scale the range of the data
-    x.domain([1992, 2014]);
-    y.domain([0, 100]);
+  //teams
+  var num_teams_selected = 0;
+  var team_selected = []
 
-    // making the function for the linegraph
-    var valueline = d3.svg.line()
-      .x(function(d) { return x(d.Year); })
-      .y(function(d) { return y(d.Perc_foreign); })
-      .interpolate("basis");
+  // making the draw function that initializes the visualization
+  function draw_map (data, year){
+    // increase year timer
+    yearTimer += 1;
 
-    // making a legend object
-    var legend;
+    // sort and filter the data
+    data = data.filter(function(d){return d.Season === year});
+    //data = data.filter(function(d){return !d.Teams in oldData.Teams;})
+    data = data.sort(function(a, b){return d3.descending(a.Points, b.Points); })
 
-    // making the draw function that initializes the visualization
-    function draw_map (data, year){
-      // increase year timer
-      yearTimer += 1;
+    // select all circles
+    point = uk_map.selectAll("circle")
+      .data(data, function(d){return d.Teams;})
 
-      // sort and filter the data
-      data = data.filter(function(d){return d.Season === year});
-      //data = data.filter(function(d){return !d.Teams in oldData.Teams;})
-      data = data.sort(function(a, b){return d3.descending(a.Points, b.Points); })
+    // making the exit selection
+    var pointExit = point.exit() 
 
-      // select all circles
-      point = uk_map.selectAll("circle")
-        .data(data, function(d){return d.Teams;})
-
-      // making the enter and exit selectinos
-      //pointEnter = point.enter()
-      var pointExit = point.exit() 
-
-      // update selection.
-      var update = point
-        .transition()
-        .duration(500)
-        .attr("cx", function(d){
+    // update selection.
+    var update = point
+      .transition()
+      .duration(500)
+      .attr("cx", function(d){
         return projection([d.Longitude, d.Latitude])[0]
-        })
-        .attr("cy", function(d){
+      })
+      .attr("cy", function(d){
         return projection([d.Longitude, d.Latitude])[1]
-        })
-        .attr("r", function(d){
+      })
+      .attr("r", function(d){
         return capacityScale(d.Capacity);
-        });
+      });
           
-
       // enter selection should have a fadeIn transition 
       pointEnter = point.enter()
         .append("circle")
         .attr("class", "stadium")
-        .attr("fill-opacity", "0")
+        .attr("opacity", "0")
         .attr("cx", function(d){
           return projection([d.Longitude, d.Latitude])[0];
         })
@@ -184,7 +181,7 @@ var drawMapLineGraph = function(error, data){
         })
         .transition()
         .duration(1000)
-        .attr("fill-opacity", "1")
+        .attr("opacity", "1")
 
       // remove the exit selection
       pointExit.transition().duration(1000).style('opacity', '0').remove();
@@ -196,13 +193,19 @@ var drawMapLineGraph = function(error, data){
       point = uk_map.selectAll("circle");
       point
         .on('mouseover', function(d){
+
+          // highlight the element
           d3.select(this)
           .style("fill", "#ADD8E6")
 
-          var xPosition = parseFloat(d3.select(this).attr("cx")) + 20;
-          var yPosition = parseFloat(d3.select(this).attr("cy")) + 130;
+          // decide on the position of the textbox
+          var xPosition = parseFloat(d3.select(this).attr("cx"));
+          if (xPosition + parseInt(d3.select("#textBox").style("width")) > width_map + margin.right){
+            xPosition = xPosition - parseInt(d3.select("#textBox").style("width"));
+          }
+          var yPosition = parseFloat(d3.select(this).attr("cy")) + 180;
 
-          // determine location of textBox and include date information
+          // set the textbox to the location details
           d3.select("#textBox")
             .style("left", xPosition + "px")
             .style("top", yPosition + "px")
@@ -222,34 +225,78 @@ var drawMapLineGraph = function(error, data){
           // remove the hidden class from textBox
           d3.select("#textBox").classed("hidden", false);
 
-          // call function add_line
-          add_line(data_foreign, d.Teams);
-
-          // update the legend
-          legend.append('text')
-          .attr('x', width_line_graph - 130)
-          .attr('y', 30)
-          .attr("id", "updatedLegend")
-          .attr("fill", "red")
-          .attr("font-weight", "bold")
-          .text(d.Teams);
         });
 
       point.on('mouseout',function(d){
+        // set the colour back to its original colour
         d3.select(this)
         .style("fill", "steelblue")
 
+        // hide the textbox
         d3.select("#textBox").classed("hidden", true);
 
-        // remove the additional path
-        d3.select("#teamPath").remove();
-
-        // remove updated legend
-        d3.select("#updatedLegend").remove();
       })
 
+      point.on('click', function(d){
+        var id;
 
-      // set the timer variable
+        // if the team is already displayed in a graph, remove it
+        if (contains(team_selected, d.Teams)){
+          // take id based on team name and remove it
+          id = "#" + String(d.Teams).substring(0,3);
+          d3.select(id).remove();
+
+          // update team_selected array
+          var index = team_selected.indexOf(d.Teams);
+          team_selected.splice(index, 1);  
+          num_teams_selected--;
+
+          // take the id for the legend
+          var a = "#" + String(d.Teams).substring(0,4);
+
+          // legend doesn't want to update itself
+          d3.selectAll(".legend text").remove()
+        }
+
+        // if the number of teams selected is larger than 2, do nothing
+        else if (num_teams_selected >= 2){
+          return;
+        }
+
+        // make a linegraph of the amount of foreign players of the team
+        else {
+
+          // update the array of selected teams
+          team_selected.push(d.Teams);
+          num_teams_selected++;
+
+          // make a new id for the legend
+          id = "#" + String(d.Teams).substring(0,4);
+          var colour = "red"
+
+          // if theres already a line, change spacing and colour
+          if (num_teams_selected == 2){
+            console.log("Hallo");
+            vertical_spacing = vertical_spacing + 20;
+            colour = "green";
+          }
+
+          // add a new line
+          add_line(data_foreign, d.Teams, colour);
+
+          // update the legend
+          legend.append('text')
+            .attr('x', width_line_graph - horizontal_spacing)
+            .attr('y', vertical_spacing + 20)
+            .attr("id", id)
+            .attr("fill", colour)
+            .attr("font-weight", "bold")
+            .text(d.Teams);
+          }
+        
+      })
+
+      // Making the timeline: Set the timer variable
       var timer;
       for (var i = 0; i < years.length; i++){
         if (years[i] === year) {
@@ -258,8 +305,9 @@ var drawMapLineGraph = function(error, data){
       }
 
       // use the timer variable to determine position of the timeline marker
-      var xCoord = 20 + ((width_map - margin.left - (margin.right / 2)) / number_of_years) * (timer + 1);
-      var yCoord = height_map + 175;
+      var width_marker = parseInt(d3.select("#marker").style("width"));
+      var xCoord = (margin.left - width_marker) + (width_axis / (number_of_years + 1)) * (timer + 1);
+      var yCoord = height_map + 200;
 
       d3.select("#marker")
         .style("left", xCoord + "px")
@@ -280,6 +328,7 @@ var drawMapLineGraph = function(error, data){
       // Add the valueline path.
       line_graph.append("path")
         .attr("class", "line")
+        .attr("stroke", "steelblue")
         .attr("d", valueline(data));
 
       // Add the X Axis
@@ -300,7 +349,7 @@ var drawMapLineGraph = function(error, data){
         .append("text")
         .attr("text-anchor", "start")
         .attr("x", width_line_graph / 4)
-        .attr("y", height_line_graph + 50)
+        .attr("y", height_line_graph + 70)
         .text("Premier league seasons");
 
       // Add the Y Axis
@@ -313,8 +362,8 @@ var drawMapLineGraph = function(error, data){
         .attr("class", "y_label")
         .append("text")
         .attr("text-anchor", "end")
-        .attr("x", 0)
-        .attr("y", height_line_graph - 235)
+        .attr("x", -40)
+        .attr("y", height_line_graph - 335)
         .attr("transform", "rotate(-90)")
         .text("Percentage of foreign players") 
 
@@ -323,23 +372,25 @@ var drawMapLineGraph = function(error, data){
 
 
         legend.append('text')
-          .attr('x', width_line_graph - 130)
-          .attr('y', 10)
+          .attr('x', width_line_graph - horizontal_spacing)
+          .attr('y', vertical_spacing)
           .attr("fill", "steelblue")
           .attr("font-weight", "bold")
           .text("Average");
       }
 
     // make a function add_line
-    function add_line(data, team){
+    function add_line(data, team, colour){
       // filter data on the average
       var data = data.filter(function(d){return d.Team === team});
       console.log(data);
 
+      var id = String(team).substring(0,3);
       // Add the valueline path.
       line_graph.append("path")
         .attr("class", "line")
-        .attr("id", "teamPath")
+        .attr("id", id)
+        .attr("stroke", colour)
         .attr("d", valueline(data));
     }
 
@@ -390,7 +441,19 @@ var drawMapLineGraph = function(error, data){
           clearTimeout(mapInterval);
           mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
         })
+
+  // a contains function that checks whether an element is in an array
+  function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+  }
 }
+
+// a queue which makes sure all data objects are available in drawMapLineGraph
 var q = queue(1);
 q.defer(d3.json, "./data/uk.json");
 q.defer(d3.csv, "./data/stadium_teams.csv");
@@ -398,6 +461,6 @@ q.defer(d3.csv, "./data/perc_foreign.csv");
 q.awaitAll(drawMapLineGraph); 
 
 // TODO:
+// Make a zoom function on the map
 // Clean webscraper premier league top scorers
-// Update dataset for map visualization. Some data points are lacking
-// Make sure team names are the same on map visualization as in data set of foreign players
+// Find code to actually update axis
