@@ -41,13 +41,6 @@ var line_graph = d3.select("#foreignPlayers")
 var x = d3.scale.linear().range([0, width_line_graph])
 var y = d3.scale.linear().range([height_line_graph, 0]);
 
-// Define the axes
-var xAxisGraph = d3.svg.axis().scale(x)
-    .orient("bottom").ticks(16);
-
-var yAxisGraph = d3.svg.axis().scale(y)
-    .orient("left").ticks(5);
-
 // main function that draws the map and line
 var drawMapLineGraph = function(error, data){
   // give each dataset its own variable name
@@ -107,7 +100,8 @@ var drawMapLineGraph = function(error, data){
 
   var xAxisMap = d3.svg.axis()
     .scale(xScale)
-    .orient("bottom");
+    .orient("bottom")
+    .tickFormat(d3.format("d"));
 
   // append axis
   uk_map.append("g")
@@ -125,10 +119,18 @@ var drawMapLineGraph = function(error, data){
     .y(function(d) { return y(d.Perc_foreign); })
     .interpolate("basis");
 
-  // making a legend variable
+  // variables for constructing the legend of the linegraph
   var legend;
   var horizontal_spacing = 180;
-  var vertical_spacing = 10;
+  var vertical_spacing = 20;
+  var extra_spacing = 20;
+
+  // Define the axes
+  var xAxisGraph = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(16).tickFormat(d3.format("d"));
+
+  var yAxisGraph = d3.svg.axis().scale(y)
+    .orient("left").ticks(5);
 
   //teams
   var num_teams_selected = 0;
@@ -195,8 +197,8 @@ var drawMapLineGraph = function(error, data){
         .on('mouseover', function(d){
 
           // highlight the element
-          d3.select(this)
-          .style("fill", "#ADD8E6")
+          //d3.select(this)
+          //.style("fill", "#ADD8E6")
 
           // decide on the position of the textbox
           var xPosition = parseFloat(d3.select(this).attr("cx"));
@@ -229,33 +231,48 @@ var drawMapLineGraph = function(error, data){
 
       point.on('mouseout',function(d){
         // set the colour back to its original colour
-        d3.select(this)
-        .style("fill", "steelblue")
+        //d3.select(this)
+        //.style("fill", "steelblue")
 
         // hide the textbox
         d3.select("#textBox").classed("hidden", true);
 
       })
-
+      var test;
       point.on('click', function(d){
-        var id;
+        var teamClass
 
         // if the team is already displayed in a graph, remove it
         if (contains(team_selected, d.Teams)){
-          // take id based on team name and remove it
-          id = "#" + String(d.Teams).substring(0,3);
-          d3.select(id).remove();
 
-          // update team_selected array
+          // take the class based on team name and remove it
+          teamClass = "." + String(d.Teams).substring(0,3) + 
+            String(d.Teams).substring(d.Teams.length - 3, d.Teams.length);
+          d3.selectAll(teamClass).remove();
+
+          // select the index of the removed team
           var index = team_selected.indexOf(d.Teams);
-          team_selected.splice(index, 1);  
+
+          // if the index returned is zero and there are 2 teams displayed adjust the legend and the colour
+          if (index === 0 && team_selected.length == 2){
+            vertical_spacing = 20;
+            d3.select(".legend" + " " + "." + String(team_selected[1]).substring(0,3) + 
+              String(team_selected[1]).substring((team_selected[1].length) - 3, team_selected[1].length))
+              .attr("y", vertical_spacing + margin.top)
+              .attr("fill", "red");
+
+            d3.select(".line" + "." + String(team_selected[1]).substring(0,3) + 
+              String(team_selected[1]).substring((team_selected[1].length) - 3, team_selected[1].length))
+              .attr("stroke", "red");
+          }
+
+          // remove the team from the array and update the number of teams variable
+          team_selected.splice(index, 1); 
           num_teams_selected--;
 
-          // take the id for the legend
-          var a = "#" + String(d.Teams).substring(0,4);
-
-          // legend doesn't want to update itself
-          d3.selectAll(".legend text").remove()
+          // set class back to stadium
+          d3.select(this)
+            .attr("class", "stadium");
         }
 
         // if the number of teams selected is larger than 2, do nothing
@@ -270,16 +287,25 @@ var drawMapLineGraph = function(error, data){
           team_selected.push(d.Teams);
           num_teams_selected++;
 
-          // make a new id for the legend
-          id = "#" + String(d.Teams).substring(0,4);
+          // make a new class for the legend based on its team name and points
+          teamClass = String(d.Teams).substring(0,3) + 
+            String(d.Teams).substring(d.Teams.length - 3,d.Teams.length);
+          console.log(teamClass);
+
+          // reset vertical spacing
+          vertical_spacing = 20;
           var colour = "red"
+          var item = "firstSelected";
 
           // if theres already a line, change spacing and colour
           if (num_teams_selected == 2){
-            console.log("Hallo");
-            vertical_spacing = vertical_spacing + 20;
+            vertical_spacing = vertical_spacing + extra_spacing;
             colour = "green";
+            item = "secondSelected";
           }
+          // change the colour of the point so its clear on the map
+          d3.select(this)
+            .attr("class", item);
 
           // add a new line
           add_line(data_foreign, d.Teams, colour);
@@ -287,8 +313,8 @@ var drawMapLineGraph = function(error, data){
           // update the legend
           legend.append('text')
             .attr('x', width_line_graph - horizontal_spacing)
-            .attr('y', vertical_spacing + 20)
-            .attr("id", id)
+            .attr('y', vertical_spacing + margin.top)
+            .attr("class", teamClass)
             .attr("fill", colour)
             .attr("font-weight", "bold")
             .text(d.Teams);
@@ -383,13 +409,13 @@ var drawMapLineGraph = function(error, data){
     function add_line(data, team, colour){
       // filter data on the average
       var data = data.filter(function(d){return d.Team === team});
-      console.log(data);
 
-      var id = String(team).substring(0,3);
+      var teamClass = String(team).substring(0,3) + 
+        String(team).substring(team.length - 3,team.length);
+      
       // Add the valueline path.
       line_graph.append("path")
-        .attr("class", "line")
-        .attr("id", id)
+        .attr("class", "line" + " " + teamClass)
         .attr("stroke", colour)
         .attr("d", valueline(data));
     }
@@ -461,6 +487,8 @@ q.defer(d3.csv, "./data/perc_foreign.csv");
 q.awaitAll(drawMapLineGraph); 
 
 // TODO:
-// Make a zoom function on the map
+// Clear magic numbers
+// Display the exact rank before the team name when you hoover in the barchart
 // Clean webscraper premier league top scorers
-// Find code to actually update axis
+// Make the report
+// Update readme

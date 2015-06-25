@@ -103,10 +103,7 @@ body {
 .subunit.IRL { fill: #ffffff;
 stroke: none; }
 
-.stadium {
-    fill: steelblue;
-    fill-opacity: 0.8;
-}
+
 
 .fadeIn {
     fill-opacity: 0;
@@ -141,14 +138,6 @@ stroke: none; }
 
 .left {
   float: left;
-}
-
-
-#slider1{
-    position: absolute;
-    fill: green;
-    width: 200px;
-    heigh:200px;
 }
 
 .line {
@@ -222,4 +211,18 @@ tr, td {
 
 #teamPath {
   stroke: red;
+}
+
+.firstSelected {
+  fill: red;
+}
+
+.secondSelected {
+  fill: green;
+  color: green;
+}
+
+.stadium {
+  fill: steelblue;
+  opacity: 0.8;
 }
