@@ -486,9 +486,3 @@ q.defer(d3.csv, "./data/stadium_teams.csv");
 q.defer(d3.csv, "./data/perc_foreign.csv");
 q.awaitAll(drawMapLineGraph); 
 
-// TODO:
-// Clear magic numbers
-// Display the exact rank before the team name when you hoover in the barchart
-// Clean webscraper premier league top scorers
-// Make the report
-// Update readme
