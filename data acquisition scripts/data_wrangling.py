@@ -70,6 +70,7 @@ def get_premier_league_teams(root_url, premier_league_start_year, premier_league
         for year in range(premier_league_duration)] 
     
     data = []
+    data.append(['Teams', 'Season', 'Points','Ranking']) 
     # keep going until you have all the teams per year
     while len(years) > 0:
         # get url
@@ -90,11 +91,17 @@ def get_premier_league_teams(root_url, premier_league_start_year, premier_league
         for index, point in enumerate(dom('.league-table-mini tr')):
             for td in point('td')[4:5]:
                 points.append(td.content)
-        data.append(['Teams', 'Season', 'Points']) 
         
+        
+        # get ranking
+        ranking = []
+        for index, point in enumerate(dom('.league-table-mini tr')):
+            for td in point('td')[0:1]:
+                ranking.append(td.content)
+                
         # zip takes two lists and loops over them
-        for team, point in zip(teams, points):
-            data.append([team, sub_url[0:4], point])
+        for team, point, rank in zip(teams, points, ranking):
+            data.append([team, sub_url[0:4], point, rank ])
         
     return data
         
