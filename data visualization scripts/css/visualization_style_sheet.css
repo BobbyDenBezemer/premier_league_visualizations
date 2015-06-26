@@ -77,7 +77,7 @@ body {
 
 .text {
   fill: white;
-  font: 10px sans-serif;
+  font: 14px sans-serif;
   text-anchor: end;
 }
 
@@ -94,7 +94,11 @@ body {
     text-anchor: end;
 }
 
-
+.firstText {
+  fill: white;
+  font: 14px sans-serif;
+  text-anchor: start;
+}
 
 .subunit.SCT { fill: #ffffff }
 .subunit.WLS { fill: #cdd; }

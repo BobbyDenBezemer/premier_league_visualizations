@@ -47,8 +47,6 @@ var drawMapLineGraph = function(error, data){
   var uk = data[0];
   var stadium_data = data[1];
   var data_foreign = data[2];
-  console.log(stadium_data);
-  console.log(data_foreign);
 
   // convert floats to ints
   stadium_data.forEach(function(d) {
@@ -87,8 +85,9 @@ var drawMapLineGraph = function(error, data){
   var number_of_years = years.length;
 
   // deciding on the domain of capacity scalee
-  capacityScale.domain([10000, 80000]);
-  var point, pointEnter, tmp
+  capacityScale.domain([d3.min(stadium_data, function(d){return d.Capacity}),
+    d3.max(stadium_data, function(d){return d.Capacity;})]);
+  var point, pointEnter;
   var oldData;
 
   // making the axis scale
@@ -101,16 +100,20 @@ var drawMapLineGraph = function(error, data){
   var xAxisMap = d3.svg.axis()
     .scale(xScale)
     .orient("bottom")
+    .ticks(number_of_years / 2)
     .tickFormat(d3.format("d"));
 
   // append axis
   uk_map.append("g")
     .attr("class", "axis")  //Assign "axis" class
-    .attr("transform", "translate(0," + (height_map - 25) + ")")
+    .attr("transform", "translate(0," + (height_map - (margin.bottom / 3)) + ")")
     .call(xAxisMap);
 
   // Scale the range of the data
-  x.domain([1992, 2014]);
+  x.domain([d3.min(stadium_data, function(d){return d.Season}),
+    d3.max(stadium_data, function(d){return d.Season})])
+
+  // minimum percentage is of course 0 and max if 100
   y.domain([0, 100]);
 
   // making the function for the linegraph
@@ -127,10 +130,10 @@ var drawMapLineGraph = function(error, data){
 
   // Define the axes
   var xAxisGraph = d3.svg.axis().scale(x)
-    .orient("bottom").ticks(16).tickFormat(d3.format("d"));
+    .orient("bottom").ticks(number_of_years / 2).tickFormat(d3.format("d"));
 
   var yAxisGraph = d3.svg.axis().scale(y)
-    .orient("left").ticks(5);
+    .orient("left");
 
   //teams
   var num_teams_selected = 0;
@@ -143,6 +146,7 @@ var drawMapLineGraph = function(error, data){
 
     // sort and filter the data
     data = data.filter(function(d){return d.Season === year});
+
     //data = data.filter(function(d){return !d.Teams in oldData.Teams;})
     data = data.sort(function(a, b){return d3.descending(a.Points, b.Points); })
 
@@ -167,23 +171,23 @@ var drawMapLineGraph = function(error, data){
         return capacityScale(d.Capacity);
       });
           
-      // enter selection should have a fadeIn transition 
-      pointEnter = point.enter()
-        .append("circle")
-        .attr("class", "stadium")
-        .attr("opacity", "0")
-        .attr("cx", function(d){
-          return projection([d.Longitude, d.Latitude])[0];
-        })
-        .attr("cy", function(d){
-          return projection([d.Longitude, d.Latitude])[1];
-        })
-        .attr("r", function(d){
-          return capacityScale(d.Capacity);
-        })
-        .transition()
-        .duration(1000)
-        .attr("opacity", "1")
+    // enter selection should have a fadeIn transition 
+    pointEnter = point.enter()
+      .append("circle")
+       .attr("class", "stadium")
+       .attr("opacity", "0")
+       .attr("cx", function(d){
+         return projection([d.Longitude, d.Latitude])[0];
+       })
+       .attr("cy", function(d){
+         return projection([d.Longitude, d.Latitude])[1];
+       })
+       .attr("r", function(d){
+         return capacityScale(d.Capacity);
+       })
+       .transition()
+       .duration(1000)
+       .attr("opacity", "1")
 
       // remove the exit selection
       pointExit.transition().duration(1000).style('opacity', '0').remove();
@@ -195,10 +199,6 @@ var drawMapLineGraph = function(error, data){
       point = uk_map.selectAll("circle");
       point
         .on('mouseover', function(d){
-
-          // highlight the element
-          //d3.select(this)
-          //.style("fill", "#ADD8E6")
 
           // decide on the position of the textbox
           var xPosition = parseFloat(d3.select(this).attr("cx"));
@@ -230,15 +230,12 @@ var drawMapLineGraph = function(error, data){
         });
 
       point.on('mouseout',function(d){
-        // set the colour back to its original colour
-        //d3.select(this)
-        //.style("fill", "steelblue")
-
         // hide the textbox
         d3.select("#textBox").classed("hidden", true);
 
       })
-      var test;
+
+      // use the on click handler to make new line graphs appear and disappear
       point.on('click', function(d){
         var teamClass
 
@@ -264,6 +261,9 @@ var drawMapLineGraph = function(error, data){
             d3.select(".line" + "." + String(team_selected[1]).substring(0,3) + 
               String(team_selected[1]).substring((team_selected[1].length) - 3, team_selected[1].length))
               .attr("stroke", "red");
+
+            d3.select(".secondSelected")
+              .attr("class", "firstSelected")
           }
 
           // remove the team from the array and update the number of teams variable
@@ -297,12 +297,13 @@ var drawMapLineGraph = function(error, data){
           var colour = "red"
           var item = "firstSelected";
 
-          // if theres already a line, change spacing and colour
+          // if theres already a line, change spacing and colour and class
           if (num_teams_selected == 2){
             vertical_spacing = vertical_spacing + extra_spacing;
             colour = "green";
             item = "secondSelected";
           }
+
           // change the colour of the point so its clear on the map
           d3.select(this)
             .attr("class", item);
@@ -333,7 +334,7 @@ var drawMapLineGraph = function(error, data){
       // use the timer variable to determine position of the timeline marker
       var width_marker = parseInt(d3.select("#marker").style("width"));
       var xCoord = (margin.left - width_marker) + (width_axis / (number_of_years + 1)) * (timer + 1);
-      var yCoord = height_map + 200;
+      var yCoord = height_map + 240;
 
       d3.select("#marker")
         .style("left", xCoord + "px")
@@ -368,7 +369,8 @@ var drawMapLineGraph = function(error, data){
             .attr("dy", ".15em")
             .attr("transform", function(d) {
                 return "rotate(-45)" 
-        })
+        });
+
       // Add the X axis label
       line_graph.append("g")
         .attr("class", "x_label")
@@ -381,7 +383,7 @@ var drawMapLineGraph = function(error, data){
       // Add the Y Axis
       line_graph.append("g")
         .attr("class", "y axis")
-        .call(yAxisGraph)
+        .call(yAxisGraph);
 
       // Add the Y axis label
       line_graph.append("g")
@@ -393,16 +395,16 @@ var drawMapLineGraph = function(error, data){
         .attr("transform", "rotate(-90)")
         .text("Percentage of foreign players") 
 
-        legend = line_graph.append('g')
-          .attr("class", "legend")    
+      legend = line_graph.append('g')
+        .attr("class", "legend")    
 
 
-        legend.append('text')
-          .attr('x', width_line_graph - horizontal_spacing)
-          .attr('y', vertical_spacing)
-          .attr("fill", "steelblue")
-          .attr("font-weight", "bold")
-          .text("Average");
+      legend.append('text')
+        .attr('x', width_line_graph - horizontal_spacing)
+        .attr('y', vertical_spacing)
+        .attr("fill", "steelblue")
+        .attr("font-weight", "bold")
+        .text("Average");
       }
 
     // make a function add_line
@@ -410,6 +412,7 @@ var drawMapLineGraph = function(error, data){
       // filter data on the average
       var data = data.filter(function(d){return d.Team === team});
 
+      // make sure the right classes is selected through the team name
       var teamClass = String(team).substring(0,3) + 
         String(team).substring(team.length - 3,team.length);
       
@@ -420,7 +423,7 @@ var drawMapLineGraph = function(error, data){
         .attr("d", valueline(data));
     }
 
-    // set the interval and make run it
+    // set the interval and run it
     var mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
     mapInterval;
 
@@ -440,43 +443,41 @@ var drawMapLineGraph = function(error, data){
       .on("click", function(d){
         d3.event.preventDefault();
         var year = d;
-        //console.log(dataset);
-        console.log(year);
         draw_map(stadium_data, year);
       })
 
-      // a pauze button that clears the time interval
-      var pauzeButton = d3.select("#mapPauzeButton")
-        .on("click", function(){
-          clearTimeout(mapInterval);
-        })
+    // a pauze button that clears the time interval
+    var pauzeButton = d3.select("#mapPauzeButton")
+     .on("click", function(){
+        clearTimeout(mapInterval);
+    })
 
-      // continue button that continues interval from where global variable yearTimer is
-      var continueButton = d3.select("#mapContinueButton")
-        .on("click", function(){
-          if (mapInterval){
-            clearTimeout(mapInterval);  
-          }
-        mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
-      })
-
-      // restart button that sets yearTimer to zero and makes the interval run again
-      var restartButton = d3.select("#mapRestartButton")
-        .on("click", function(){
-          yearTimer = 0;
-          clearTimeout(mapInterval);
-          mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
-        })
-
-  // a contains function that checks whether an element is in an array
-  function contains(a, obj) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i] === obj) {
-            return true;
+    // continue button that continues interval from where global variable yearTimer is
+    var continueButton = d3.select("#mapContinueButton")
+      .on("click", function(){
+        if (mapInterval){
+          clearTimeout(mapInterval);  
         }
+      mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
+    })
+
+    // restart button that sets yearTimer to zero and makes the interval run again
+    var restartButton = d3.select("#mapRestartButton")
+      .on("click", function(){
+        yearTimer = 0;
+        clearTimeout(mapInterval);
+        mapInterval = setInterval(function(){draw_map(stadium_data, years[yearTimer])}, 2000);
+    })
+
+    // a contains function that checks whether an element is in an array
+    function contains(a, obj) {
+      for (var i = 0; i < a.length; i++) {
+          if (a[i] === obj) {
+              return true;
+          } 
+      }
+      return false;
     }
-    return false;
-  }
 }
 
 // a queue which makes sure all data objects are available in drawMapLineGraph
